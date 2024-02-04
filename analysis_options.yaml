@@ -1,1 +1,122 @@
 include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  plugins:
+    - dart_code_metrics
+
+  language:
+    strict-casts: true
+
+  exclude:
+    - "**.g.dart"
+    - "**/*.g.dart"
+    - "**.mocks.dart"
+    - "**/*.freezed.dart"
+    - "example/**"
+    - "build/**"
+
+  errors:
+    # Otherwise cause the import of all_lint_rules to warn because of some rules conflicts.
+    # We explicitly enabled even conflicting rules and are fixing the conflict
+    # in this file
+    included_file_warning: ignore
+    #ignore global deprecation, maybe should be enabled
+    deprecated_member_use: info
+    #ignore current pachage deprecation to use Deprecated word inside project
+    #more: https://github.com/dart-lang/sdk/commit/c54bc11770fd35ee739c7abac247029a99536553#diff-a49e6440bfa40e02e02caa55132ae51abdc48b5dd56fcb419e7088c8340414d2R16
+    deprecated_member_use_from_same_package: ignore
+    # treat missing required parameters as a warning (not a hint)
+    missing_required_param: warning
+    # treat missing returns as a warning (not a hint)
+    missing_return: warning
+    # allow having TODOs in the code
+    todo: true
+    #Allow assets with dot at start
+    asset_directory_does_not_exist: info
+    unused_import: error
+     #NOTE: should be info due to the problem: https://github.com/dart-lang/dart_style/issues/753 
+    require_trailing_commas: info
+
+dart_code_metrics:
+  extends:
+    - package:flutter_lints/flutter.yaml
+    - package:data/analysis_options.yaml
+  rules:
+    - avoid-unnecessary-conditionals:
+        severity: info
+    - no-empty-block:
+        severity: style
+
+linter:
+  rules:
+    unnecessary_null_aware_assignments: false
+    prefer_if_null_operators: true
+    null_check_on_nullable_type_parameter: true
+    cast_nullable_to_non_nullable: true
+    prefer_null_aware_operators: true
+    unnecessary_null_in_if_null_operators: true
+    lines_longer_than_80_chars: false
+    omit_local_variable_types: false
+    avoid_function_literals_in_foreach_calls: false
+    constant_identifier_names: true
+    implementation_imports: false
+    prefer_adjacent_string_concatenation: false
+    prefer_null_aware_method_calls: true
+    #TODO: this should be enabled back
+    use_if_null_to_convert_nulls_to_bools: false
+    avoid_slow_async_io: true
+    deprecated_consistency: true
+    eol_at_end_of_file: true
+    literal_only_boolean_expressions: true
+    prefer_final_locals: true
+    prefer_int_literals: true
+    prefer_single_quotes: true
+    require_trailing_commas: true
+    unnecessary_lambdas: true
+    always_declare_return_types: true
+    always_use_package_imports: true
+    avoid_bool_literals_in_conditional_expressions: true
+    avoid_catching_errors: true
+    avoid_double_and_int_checks: true
+    avoid_escaping_inner_quotes: true
+    avoid_field_initializers_in_const_classes: true
+    avoid_positional_boolean_parameters: true
+    avoid_private_typedef_functions: true
+    avoid_returning_null_for_future: true
+    avoid_setters_without_getters: true
+    avoid_type_to_string: true
+    avoid_unused_constructor_parameters: true
+    cancel_subscriptions: true
+    directives_ordering: true
+    join_return_with_assignment: true
+    leading_newlines_in_multiline_strings: true
+    missing_whitespace_between_adjacent_strings: true
+    no_adjacent_strings_in_list: true
+    no_runtimeType_toString: true
+    parameter_assignments: true
+    prefer_asserts_in_initializer_lists: true
+    prefer_constructors_over_static_methods: true
+    prefer_final_in_for_each: true
+    prefer_if_elements_to_conditional_expressions: true
+    prefer_interpolation_to_compose_strings: true
+    sort_child_properties_last: true
+    sort_unnamed_constructors_first: true
+    test_types_in_equals: true
+    throw_in_finally: true
+    tighten_type_of_initializing_formals: true
+    type_annotate_public_apis: true
+    unnecessary_await_in_return: true
+    unnecessary_nullable_for_final_variable_declarations: true
+    unnecessary_parenthesis: true
+    unnecessary_raw_strings: true
+    unnecessary_statements: true
+    unsafe_html: true
+    use_is_even_rather_than_modulo: true
+    use_key_in_widget_constructors: false
+    use_late_for_private_fields_and_variables: true
+    use_setters_to_change_properties: true
+    use_string_buffers: true
+    #TODO: options below should be uncomment and fix
+    depend_on_referenced_packages: false
+    use_build_context_synchronously: true
+    library_private_types_in_public_api: false

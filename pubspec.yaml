@@ -9,11 +9,76 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  #NETWORK
+  freezed: ^2.3.2
+  freezed_annotation: ^2.2.0
+  dio: ^5.2.1
+  retrofit: ^4.1.0
+
+  #STATE MANAGEMENT
+  flutter_bloc: ^8.1.3
+  flutter_expanded_tile:
+    git:
+      url: https://github.com/PoradaApp/flutter_expanded_tile.git
+      ref: master
+  flutter_adaptive_scaffold: 
+    git: 
+      url: https://github.com/PoradaApp/packages.git
+      ref: custom_scaffold
+      path: packages/flutter_adaptive_scaffold
+
+  #UI
+  cached_network_image: ^3.3.0
+  oktoast: ^3.3.1
+  shimmer: ^3.0.0
+
+  #TESTING
+  lorem_ipsum: any
+  loggy: ^2.0.3
+
+  #OTHER
+  dartz: ^0.10.1
+  get_it: ^7.6.0
+  go_router: ^12.1.3
+  url_strategy: ^0.2.0
+  stack_trace: ^1.11.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  retrofit_generator: ^8.1.0
+  build_runner: ^2.4.7
+  source_gen: ^1.2.7
+  json_serializable: ^6.6.1
+  json_annotation: ^4.8.0
+  flutter_lints: ^2.0.2
+  dart_code_metrics: any
+
 
 flutter:
   uses-material-design: true
+  generate: true
+
+  fonts:
+    - family: Unbounded
+      fonts:
+        - asset: assets/google_fonts/static/Unbounded-Light.ttf
+          weight: 200
+        - asset: assets/google_fonts/static/Unbounded-Medium.ttf
+          weight: 300
+        - asset: assets/google_fonts/static/Unbounded-Regular.ttf
+          weight: 500
+        - asset: assets/google_fonts/static/Unbounded-SemiBold.ttf
+        - asset: assets/google_fonts/static/Unbounded-ExtraLight.ttf
+          weight: 100
+        - asset: assets/google_fonts/static/Unbounded-ExtraBold.ttf
+          weight: 900
+        - asset: assets/google_fonts/static/Unbounded-Bold.ttf
+          weight: 700
+        - asset: assets/google_fonts/static/Unbounded-Black.ttf
+  assets:
+    - assets/google_fonts/
+

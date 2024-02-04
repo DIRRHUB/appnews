@@ -1,20 +1,19 @@
+import 'dart:async';
+
+import 'package:appnews/start/initial_setup.dart';
+import 'package:appnews/start/one_app.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+Future<void> main() async {
+  await runZoned(() async {
+    LicenseRegistry.addLicense(() async* {
+      final license = await rootBundle.loadString('assets/google_fonts/OFL.txt');
+      yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+    });
+    WidgetsFlutterBinding.ensureInitialized();
+    await InitialSetup.instance.init();
+    runApp(OneApp());
+  });
 }
