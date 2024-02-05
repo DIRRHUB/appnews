@@ -10,7 +10,7 @@ class ArticlesPage extends StatelessWidget {
     return ListView.separated(
       padding: const EdgeInsets.symmetric(horizontal: PaddingConstants.extraLarge),
       shrinkWrap: true,
-      itemCount: 10,
+      itemCount: 100,
       itemBuilder: (context, index) {
         return const SmallArticleCard();
       },
