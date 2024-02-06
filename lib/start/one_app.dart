@@ -37,8 +37,9 @@ class OneApp extends StatelessWidget {
   Widget _buildApp(BuildContext context, Widget? child) {
     final size = MediaQuery.of(context).size;
     return MediaQuery(
-      data: MediaQuery.of(context)
-          .copyWith(textScaler: TextScaler.linear(size.width > SizeConstants.smallPageBreakpoint ? 1 : 0.75)),
+      data: MediaQuery.of(context).copyWith(
+        textScaler: TextScaler.linear(size.width > SizeConstants.smallPageBreakpoint ? 1 : 0.75),
+      ),
       child: child ?? const SizedBox(),
     );
   }
