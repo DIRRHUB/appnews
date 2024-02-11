@@ -36,7 +36,7 @@ class _NewsRemoteDatasource implements NewsRemoteDatasource {
     )
             .compose(
               _dio.options,
-              '/article/getArticle',
+              '/minuteStreamArticles',
               queryParameters: queryParameters,
               data: _data,
             )

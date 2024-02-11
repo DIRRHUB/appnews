@@ -10,7 +10,6 @@ class OneCard extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       decoration: BoxDecoration(
-        color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(BorderRadiusConstants.large),
         border: Border.all(color: theme.colorScheme.surfaceVariant),
       ),

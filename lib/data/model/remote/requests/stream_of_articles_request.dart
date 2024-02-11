@@ -3,11 +3,9 @@ import 'package:appnews/core/helper/serializable_interface.dart';
 
 class StreamOfArticlesRequest {
   Json body = {
-    'query': {
-      '\$query': {
-        'lang': 'eng',
-      },
-    },
+    'articleBodyLen': -1,
+    'recentActivityArticlesMaxArticleCount': 200,
+    'lang': 'eng',
     'apiKey': GlobalConstants.newsApiKey,
   };
 }

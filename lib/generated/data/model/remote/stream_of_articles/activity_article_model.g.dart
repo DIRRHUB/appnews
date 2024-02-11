@@ -16,6 +16,7 @@ _$ActivityArticleModelImpl _$$ActivityArticleModelImplFromJson(
       url: json['url'] as String,
       title: json['title'] as String,
       body: json['body'] as String,
+      image: json['image'] as String?,
     );
 
 Map<String, dynamic> _$$ActivityArticleModelImplToJson(
@@ -28,4 +29,5 @@ Map<String, dynamic> _$$ActivityArticleModelImplToJson(
       'url': instance.url,
       'title': instance.title,
       'body': instance.body,
+      'image': instance.image,
     };

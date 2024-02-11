@@ -2,6 +2,9 @@ import 'dart:async';
 
 import 'package:appnews/core/helper/global_constants.dart';
 import 'package:appnews/data/datasources/remote/news_remote_datasource.dart';
+import 'package:appnews/domain/repositories/remote/news_remote_repository.dart';
+import 'package:appnews/presentation/articles/bloc/articles_cubit.dart';
+import 'package:appnews/presentation/home/bloc/home_cubit.dart';
 import 'package:appnews/start/routing/main_router.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -19,6 +22,10 @@ Future<void> init() async {
     ),
   );
 
+  serviceLocator.registerLazySingleton<NewsRemoteRepository>(
+    () => NewsRemoteRepository(serviceLocator<NewsRemoteDatasource>()),
+  );
+
   serviceLocator.registerLazySingleton<Dio>(
     () => Dio()
       ..interceptors.add(
@@ -28,6 +35,18 @@ Future<void> init() async {
           responseBody: true,
         ),
       ),
+  );
+
+  serviceLocator.registerLazySingleton<ArticlesCubit>(
+    () => ArticlesCubit(
+      serviceLocator<NewsRemoteRepository>(),
+    ),
+  );
+
+  serviceLocator.registerLazySingleton<HomeCubit>(
+    () => HomeCubit(
+      serviceLocator<NewsRemoteRepository>(),
+    ),
   );
 }
 

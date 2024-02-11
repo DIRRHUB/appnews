@@ -23,6 +23,7 @@ mixin _$ActivityArticleItem {
   String get url => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get body => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ActivityArticleItemCopyWith<ActivityArticleItem> get copyWith =>
@@ -42,7 +43,8 @@ abstract class $ActivityArticleItemCopyWith<$Res> {
       DateTime dateTimePublished,
       String url,
       String title,
-      String body});
+      String body,
+      String image});
 }
 
 /// @nodoc
@@ -65,6 +67,7 @@ class _$ActivityArticleItemCopyWithImpl<$Res, $Val extends ActivityArticleItem>
     Object? url = null,
     Object? title = null,
     Object? body = null,
+    Object? image = null,
   }) {
     return _then(_value.copyWith(
       uri: null == uri
@@ -95,6 +98,10 @@ class _$ActivityArticleItemCopyWithImpl<$Res, $Val extends ActivityArticleItem>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -114,7 +121,8 @@ abstract class _$$ActivityArticleItemImplCopyWith<$Res>
       DateTime dateTimePublished,
       String url,
       String title,
-      String body});
+      String body,
+      String image});
 }
 
 /// @nodoc
@@ -135,6 +143,7 @@ class __$$ActivityArticleItemImplCopyWithImpl<$Res>
     Object? url = null,
     Object? title = null,
     Object? body = null,
+    Object? image = null,
   }) {
     return _then(_$ActivityArticleItemImpl(
       uri: null == uri
@@ -165,13 +174,17 @@ class __$$ActivityArticleItemImplCopyWithImpl<$Res>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ActivityArticleItemImpl implements _ActivityArticleItem {
+class _$ActivityArticleItemImpl extends _ActivityArticleItem {
   _$ActivityArticleItemImpl(
       {required this.uri,
       required this.language,
@@ -179,7 +192,9 @@ class _$ActivityArticleItemImpl implements _ActivityArticleItem {
       required this.dateTimePublished,
       required this.url,
       required this.title,
-      required this.body});
+      required this.body,
+      required this.image})
+      : super._();
 
   @override
   final String uri;
@@ -195,10 +210,12 @@ class _$ActivityArticleItemImpl implements _ActivityArticleItem {
   final String title;
   @override
   final String body;
+  @override
+  final String image;
 
   @override
   String toString() {
-    return 'ActivityArticleItem(uri: $uri, language: $language, isDuplicate: $isDuplicate, dateTimePublished: $dateTimePublished, url: $url, title: $title, body: $body)';
+    return 'ActivityArticleItem(uri: $uri, language: $language, isDuplicate: $isDuplicate, dateTimePublished: $dateTimePublished, url: $url, title: $title, body: $body, image: $image)';
   }
 
   @override
@@ -215,12 +232,13 @@ class _$ActivityArticleItemImpl implements _ActivityArticleItem {
                 other.dateTimePublished == dateTimePublished) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.body, body) || other.body == body));
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.image, image) || other.image == image));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, uri, language, isDuplicate,
-      dateTimePublished, url, title, body);
+      dateTimePublished, url, title, body, image);
 
   @JsonKey(ignore: true)
   @override
@@ -230,7 +248,7 @@ class _$ActivityArticleItemImpl implements _ActivityArticleItem {
           this, _$identity);
 }
 
-abstract class _ActivityArticleItem implements ActivityArticleItem {
+abstract class _ActivityArticleItem extends ActivityArticleItem {
   factory _ActivityArticleItem(
       {required final String uri,
       required final String language,
@@ -238,7 +256,9 @@ abstract class _ActivityArticleItem implements ActivityArticleItem {
       required final DateTime dateTimePublished,
       required final String url,
       required final String title,
-      required final String body}) = _$ActivityArticleItemImpl;
+      required final String body,
+      required final String image}) = _$ActivityArticleItemImpl;
+  _ActivityArticleItem._() : super._();
 
   @override
   String get uri;
@@ -254,6 +274,8 @@ abstract class _ActivityArticleItem implements ActivityArticleItem {
   String get title;
   @override
   String get body;
+  @override
+  String get image;
   @override
   @JsonKey(ignore: true)
   _$$ActivityArticleItemImplCopyWith<_$ActivityArticleItemImpl> get copyWith =>

@@ -34,6 +34,8 @@ mixin _$ActivityArticleModel {
   String get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'body')
   String get body => throw _privateConstructorUsedError;
+  @JsonKey(name: 'image')
+  String? get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +56,8 @@ abstract class $ActivityArticleModelCopyWith<$Res> {
       @JsonKey(name: 'dateTimePub') String dateTimePublished,
       @JsonKey(name: 'url') String url,
       @JsonKey(name: 'title') String title,
-      @JsonKey(name: 'body') String body});
+      @JsonKey(name: 'body') String body,
+      @JsonKey(name: 'image') String? image});
 }
 
 /// @nodoc
@@ -78,6 +81,7 @@ class _$ActivityArticleModelCopyWithImpl<$Res,
     Object? url = null,
     Object? title = null,
     Object? body = null,
+    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
       uri: null == uri
@@ -108,6 +112,10 @@ class _$ActivityArticleModelCopyWithImpl<$Res,
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -127,7 +135,8 @@ abstract class _$$ActivityArticleModelImplCopyWith<$Res>
       @JsonKey(name: 'dateTimePub') String dateTimePublished,
       @JsonKey(name: 'url') String url,
       @JsonKey(name: 'title') String title,
-      @JsonKey(name: 'body') String body});
+      @JsonKey(name: 'body') String body,
+      @JsonKey(name: 'image') String? image});
 }
 
 /// @nodoc
@@ -148,6 +157,7 @@ class __$$ActivityArticleModelImplCopyWithImpl<$Res>
     Object? url = null,
     Object? title = null,
     Object? body = null,
+    Object? image = freezed,
   }) {
     return _then(_$ActivityArticleModelImpl(
       uri: null == uri
@@ -178,6 +188,10 @@ class __$$ActivityArticleModelImplCopyWithImpl<$Res>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -192,7 +206,8 @@ class _$ActivityArticleModelImpl implements _ActivityArticleModel {
       @JsonKey(name: 'dateTimePub') required this.dateTimePublished,
       @JsonKey(name: 'url') required this.url,
       @JsonKey(name: 'title') required this.title,
-      @JsonKey(name: 'body') required this.body});
+      @JsonKey(name: 'body') required this.body,
+      @JsonKey(name: 'image') required this.image});
 
   factory _$ActivityArticleModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ActivityArticleModelImplFromJson(json);
@@ -218,10 +233,13 @@ class _$ActivityArticleModelImpl implements _ActivityArticleModel {
   @override
   @JsonKey(name: 'body')
   final String body;
+  @override
+  @JsonKey(name: 'image')
+  final String? image;
 
   @override
   String toString() {
-    return 'ActivityArticleModel(uri: $uri, language: $language, isDuplicate: $isDuplicate, dateTimePublished: $dateTimePublished, url: $url, title: $title, body: $body)';
+    return 'ActivityArticleModel(uri: $uri, language: $language, isDuplicate: $isDuplicate, dateTimePublished: $dateTimePublished, url: $url, title: $title, body: $body, image: $image)';
   }
 
   @override
@@ -238,13 +256,14 @@ class _$ActivityArticleModelImpl implements _ActivityArticleModel {
                 other.dateTimePublished == dateTimePublished) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.body, body) || other.body == body));
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.image, image) || other.image == image));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, uri, language, isDuplicate,
-      dateTimePublished, url, title, body);
+      dateTimePublished, url, title, body, image);
 
   @JsonKey(ignore: true)
   @override
@@ -270,7 +289,8 @@ abstract class _ActivityArticleModel implements ActivityArticleModel {
           @JsonKey(name: 'dateTimePub') required final String dateTimePublished,
           @JsonKey(name: 'url') required final String url,
           @JsonKey(name: 'title') required final String title,
-          @JsonKey(name: 'body') required final String body}) =
+          @JsonKey(name: 'body') required final String body,
+          @JsonKey(name: 'image') required final String? image}) =
       _$ActivityArticleModelImpl;
 
   factory _ActivityArticleModel.fromJson(Map<String, dynamic> json) =
@@ -297,6 +317,9 @@ abstract class _ActivityArticleModel implements ActivityArticleModel {
   @override
   @JsonKey(name: 'body')
   String get body;
+  @override
+  @JsonKey(name: 'image')
+  String? get image;
   @override
   @JsonKey(ignore: true)
   _$$ActivityArticleModelImplCopyWith<_$ActivityArticleModelImpl>

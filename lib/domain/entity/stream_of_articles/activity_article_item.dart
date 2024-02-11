@@ -15,7 +15,12 @@ class ActivityArticleItem with _$ActivityArticleItem {
     required String url,
     required String title,
     required String body,
+    required String image,
   }) = _ActivityArticleItem;
+
+  ActivityArticleItem._();
+
+  bool get isEmpty => uri.isEmpty;
 
   factory ActivityArticleItem.fromModel(ActivityArticleModel model) {
     return ActivityArticleItem(
@@ -26,6 +31,20 @@ class ActivityArticleItem with _$ActivityArticleItem {
       url: model.url,
       title: model.title,
       body: model.body,
+      image: model.image ?? '',
+    );
+  }
+
+  factory ActivityArticleItem.empty() {
+    return ActivityArticleItem(
+      uri: '',
+      language: '',
+      isDuplicate: false,
+      dateTimePublished: DateTime.now(),
+      url: '',
+      title: '',
+      body: '',
+      image: '',
     );
   }
 }

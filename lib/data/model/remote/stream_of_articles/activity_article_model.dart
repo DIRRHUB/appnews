@@ -16,6 +16,7 @@ class ActivityArticleModel with _$ActivityArticleModel {
     @JsonKey(name: 'url') required String url,
     @JsonKey(name: 'title') required String title,
     @JsonKey(name: 'body') required String body,
+    @JsonKey(name: 'image') required String? image,
   }) = _ActivityArticleModel;
 
   factory ActivityArticleModel.fromJson(Json json) => _$ActivityArticleModelFromJson(json);

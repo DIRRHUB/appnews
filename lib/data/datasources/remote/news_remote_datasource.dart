@@ -10,6 +10,6 @@ part '../../../generated/data/datasources/remote/news_remote_datasource.g.dart';
 abstract class NewsRemoteDatasource {
   factory NewsRemoteDatasource(Dio dio, {String baseUrl}) = _NewsRemoteDatasource;
 
-  @POST('/article/getArticle')
+  @POST('/minuteStreamArticles')
   Future<RecentActivityActiclesModel> getRecentActivityArticles(@Body() Json body);
 }
