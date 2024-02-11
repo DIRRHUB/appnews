@@ -15,7 +15,7 @@ class ArticlesPage extends StatelessWidget {
         return const SmallArticleCard();
       },
       separatorBuilder: (context, index) {
-        return const SizedBox(height: PaddingConstants.small);
+        return const SizedBox(height: PaddingConstants.large);
       },
     );
   }

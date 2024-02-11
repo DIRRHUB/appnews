@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:appnews/core/helper/global_constants.dart';
+import 'package:appnews/data/datasources/remote/news_remote_datasource.dart';
 import 'package:appnews/start/routing/main_router.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -12,7 +13,13 @@ Future<void> init() async {
     MainRouter.new,
   );
 
-  serviceLocator.registerFactory<Dio>(
+  serviceLocator.registerLazySingleton<NewsRemoteDatasource>(
+    () => NewsRemoteDatasource(
+      serviceLocator<Dio>(),
+    ),
+  );
+
+  serviceLocator.registerLazySingleton<Dio>(
     () => Dio()
       ..interceptors.add(
         LogInterceptor(
@@ -22,12 +29,6 @@ Future<void> init() async {
         ),
       ),
   );
-
-  //datasources
-
-  //repository
-
-  //usecase
 }
 
 Future<void> reinitApi() async {
