@@ -17,4 +17,10 @@ class RecentActivityActiclesItem with _$RecentActivityActiclesItem {
       recentActivityActiclesBody: RecentActivityActiclesBodyItem.fromModel(model.recentActivityActiclesBody),
     );
   }
+
+  factory RecentActivityActiclesItem.empty() {
+    return RecentActivityActiclesItem(
+      recentActivityActiclesBody: RecentActivityActiclesBodyItem.empty(),
+    );
+  }
 }

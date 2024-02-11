@@ -17,7 +17,7 @@ class ArticlesPage extends StatelessWidget {
         if (state.status == OneStatus.loading) {
           return const OneLoading();
         } else if (state.status == OneStatus.initial) {
-          return InitialArticlesPage(articles: state.articles);
+          return const InitialArticlesPage();
         } else {
           return const OneErrorPage();
         }

@@ -1,6 +1,9 @@
 import 'package:appnews/core/base/failure.dart';
+import 'package:appnews/core/enums/home_article_type_enum.dart';
 import 'package:appnews/core/enums/one_status_enum.dart';
+import 'package:appnews/data/model/remote/requests/get_articles_request.dart';
 import 'package:appnews/data/model/remote/requests/stream_of_articles_request.dart';
+import 'package:appnews/domain/entity/get_articles/get_articles_item.dart';
 import 'package:appnews/domain/entity/stream_of_articles/recent_activity_articles_item.dart';
 import 'package:appnews/domain/repositories/remote/news_remote_repository.dart';
 import 'package:appnews/presentation/articles/bloc/articles_state.dart';
@@ -12,16 +15,42 @@ class ArticlesCubit extends Cubit<ArticlesState> {
 
   ArticlesCubit(this._repository) : super(ArticlesState.initial());
 
-  void init() async {
-    emit(state.copyWith(status: OneStatus.loading));
+  void getMoreRecentArticles() async {
+    emit(state.copyWith(status: OneStatus.initial));
     final Either<Failure, RecentActivityActiclesItem> result =
         await _repository.getRecentActivityArticles(StreamOfArticlesRequest());
     result.fold(
       (l) {
         emit(state.copyWith(status: OneStatus.error, errorMessage: l.message));
       },
-      (r) {
-        emit(state.copyWith(status: OneStatus.initial, articles: r.recentActivityActiclesBody.activities));
+      (recentActivityActicles) {
+        emit(state.copyWith(status: OneStatus.initial, recentActivityActicles: recentActivityActicles));
+      },
+    );
+  }
+
+  void selectType(HomeArticleType type) {
+    emit(state.copyWith(type: type));
+    switch (type) {
+      case HomeArticleType.recent:
+        getMoreRecentArticles();
+        break;
+      case HomeArticleType.popular:
+        getMorePopularArticles(1);
+        break;
+    }
+  }
+
+  void getMorePopularArticles(int page) async {
+    emit(state.copyWith(status: OneStatus.loading));
+    final Either<Failure, GetArticlesItem> result =
+        await _repository.getPopularArticles(GetArticlesRequest(page: page));
+    result.fold(
+      (l) {
+        emit(state.copyWith(status: OneStatus.error, errorMessage: l.message));
+      },
+      (getArticles) {
+        emit(state.copyWith(status: OneStatus.initial, getArticles: getArticles));
       },
     );
   }

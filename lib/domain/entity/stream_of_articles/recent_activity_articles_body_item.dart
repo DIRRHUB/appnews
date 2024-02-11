@@ -23,4 +23,13 @@ class RecentActivityActiclesBodyItem with _$RecentActivityActiclesBodyItem {
       activities: model.activities.map(ActivityArticleItem.fromModel).toList(),
     );
   }
+
+  factory RecentActivityActiclesBodyItem.empty() {
+    return RecentActivityActiclesBodyItem(
+      newestUpdate: DateTime.now(),
+      oldestUpdate: DateTime.now(),
+      currentTime: DateTime.now(),
+      activities: [],
+    );
+  }
 }

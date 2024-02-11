@@ -11,7 +11,12 @@ class OneArticlePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return ListView(
-      padding: const EdgeInsets.all(PaddingConstants.extraLarge),
+      padding: const EdgeInsets.only(
+        left: PaddingConstants.extraLarge,
+        right: PaddingConstants.extraLarge,
+        bottom: PaddingConstants.extraLarge,
+        top: PaddingConstants.normal,
+      ),
       children: [
         if (article.image.isNotEmpty) ...[
           Container(
@@ -20,9 +25,8 @@ class OneArticlePage extends StatelessWidget {
               border: Border.all(color: theme.colorScheme.surfaceVariant),
             ),
             height: PaddingConstants.extraImmense * 8,
-            margin: const EdgeInsets.all(2),
             child: OneImage(
-              radius: BorderRadiusConstants.normal,
+              radius: BorderRadiusConstants.large,
               imageLink: article.image,
               aspectRatio: 16 / 9,
             ),

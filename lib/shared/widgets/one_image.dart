@@ -24,7 +24,7 @@ class OneImage extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(radius),
         child: DecoratedBox(
-          decoration: BoxDecoration(color: theme.colorScheme.primary),
+          decoration: BoxDecoration(color: theme.colorScheme.background),
           child: _buildImageWidget(context),
         ),
       ),
@@ -44,6 +44,7 @@ class OneImage extends StatelessWidget {
   Widget _buildNetworkImage(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: imageLink!,
+      filterQuality: FilterQuality.high,
       imageBuilder: (context, imageProvider) {
         return Container(
           decoration: BoxDecoration(

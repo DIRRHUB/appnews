@@ -1,5 +1,8 @@
 {
 	"@@locale": "en",
+	"topAppNews":"Top-News App",
 	"recentNews":"Recent News",
-	"selectArticle":"Select an article to read"
+	"selectArticle":"Select an article to read",
+	"popular":"Popular",
+	"recent":"Recent"
 }

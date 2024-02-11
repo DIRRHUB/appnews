@@ -15,7 +15,12 @@ class _SearchHeaderState extends State<SearchHeader> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(PaddingConstants.extraLarge),
+      padding: const EdgeInsets.only(
+        left: PaddingConstants.extraLarge,
+        right: PaddingConstants.extraLarge,
+        bottom: PaddingConstants.extraLarge,
+        top: PaddingConstants.normal,
+      ),
       child: OneTextField(
         labelText: 'Search',
         controller: controller,
