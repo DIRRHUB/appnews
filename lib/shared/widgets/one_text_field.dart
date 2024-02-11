@@ -167,7 +167,7 @@ class _OneTextFieldState extends State<OneTextField> {
       keyboardType: widget.keyboardType,
       obscureText: _obscureText,
       textInputAction: widget.textInputAction,
-      cursorColor: widget.cursorColor ?? theme.colorScheme.secondary,
+      cursorColor: widget.cursorColor ?? theme.colorScheme.surfaceVariant,
       expands: false,
       style: widget.textStyle?.copyWith(color: theme.colorScheme.onPrimary) ??
           theme.primaryTextTheme.bodyLarge?.copyWith(color: theme.colorScheme.onPrimary),
@@ -190,33 +190,33 @@ class _OneTextFieldState extends State<OneTextField> {
             isCollapsed: widget.isCollapsed ?? false,
             hoverColor: widget.hoverColor,
             border: OutlineInputBorder(
-              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.normal),
-              borderSide: const BorderSide(color: Colors.transparent),
+              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.large),
+              borderSide: BorderSide(color: theme.colorScheme.surfaceVariant),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.normal),
-              borderSide: widget.focusedBorderSide ?? BorderSide(color: theme.colorScheme.secondary),
+              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.large),
+              borderSide: widget.focusedBorderSide ?? BorderSide(color: theme.colorScheme.onPrimary),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.normal),
-              borderSide: const BorderSide(color: Colors.transparent),
+              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.large),
+              borderSide: BorderSide(color: theme.colorScheme.surfaceVariant),
             ),
             errorBorder: OutlineInputBorder(
-              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.normal),
+              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.large),
               borderSide: BorderSide(color: theme.colorScheme.error),
             ),
             focusedErrorBorder: OutlineInputBorder(
-              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.normal),
+              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.large),
               borderSide: BorderSide(color: theme.colorScheme.error),
             ),
             disabledBorder: OutlineInputBorder(
-              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.normal),
-              borderSide: const BorderSide(color: Colors.transparent),
+              borderRadius: widget.borderRadius ?? BorderRadius.circular(BorderRadiusConstants.large),
+              borderSide: BorderSide(color: theme.colorScheme.surfaceVariant),
             ),
             prefix: _buildPrefix(),
             prefixIcon: _buildPrefixIcon(),
             filled: true,
-            fillColor: widget.backgroundColor ?? theme.colorScheme.inverseSurface,
+            fillColor: widget.backgroundColor ?? theme.colorScheme.surface,
             errorStyle: widget.textStyle?.copyWith(color: theme.colorScheme.error) ??
                 theme.primaryTextTheme.bodyLarge?.copyWith(color: theme.colorScheme.error),
             hintStyle: widget.textStyle?.copyWith(color: theme.colorScheme.surfaceTint) ??

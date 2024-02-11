@@ -1,4 +1,4 @@
-import 'package:appnews/shared/constants/dimension_constants.dart';
+import 'package:appnews/shared/widgets/one_card.dart';
 import 'package:flutter/material.dart';
 
 class SmallArticleCard extends StatelessWidget {
@@ -6,12 +6,8 @@ class SmallArticleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(BorderRadiusConstants.normal), color: Colors.green),
-      child: const Column(
-        children: [],
-      ),
+    return OneCard(
+      child: Container(height: 100),
     );
   }
 }
