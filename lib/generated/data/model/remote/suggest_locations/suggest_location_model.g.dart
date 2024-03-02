@@ -11,12 +11,12 @@ _$SuggestLocationModelImpl _$$SuggestLocationModelImplFromJson(
     _$SuggestLocationModelImpl(
       type: json['type'] as String,
       suggestLocationLabel: SuggestLocationLabelModel.fromJson(
-          json['lang'] as Map<String, dynamic>),
+          json['label'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$SuggestLocationModelImplToJson(
         _$SuggestLocationModelImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
-      'lang': instance.suggestLocationLabel.toJson(),
+      'label': instance.suggestLocationLabel.toJson(),
     };

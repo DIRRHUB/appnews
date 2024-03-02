@@ -27,4 +27,8 @@ class SuggestCategoryItem with _$SuggestCategoryItem {
       parentUri: '',
     );
   }
+
+  String getFormattedLabel() {
+    return label.replaceAll('/', ' ').replaceAll('dmoz', '').replaceAll('news', '');
+  }
 }

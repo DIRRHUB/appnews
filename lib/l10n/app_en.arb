@@ -10,5 +10,11 @@
 	"language":"Language",
 	"sourceRank":"Source Rank",
 	"date":"Date",
-	"noResult":"No result"
+	"noResult":"No result",
+	"enterText":"Enter text",
+	"dateStart":"Start Date",
+	"dateEnd":"End Date",
+	"selectedDate":"Selected Date",
+	"dateRange":"Date Range",
+	"clear":"Clear"
 }

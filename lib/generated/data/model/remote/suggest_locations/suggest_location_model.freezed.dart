@@ -22,7 +22,7 @@ SuggestLocationModel _$SuggestLocationModelFromJson(Map<String, dynamic> json) {
 mixin _$SuggestLocationModel {
   @JsonKey(name: 'type')
   String get type => throw _privateConstructorUsedError;
-  @JsonKey(name: 'lang')
+  @JsonKey(name: 'label')
   SuggestLocationLabelModel get suggestLocationLabel =>
       throw _privateConstructorUsedError;
 
@@ -40,7 +40,7 @@ abstract class $SuggestLocationModelCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'type') String type,
-      @JsonKey(name: 'lang') SuggestLocationLabelModel suggestLocationLabel});
+      @JsonKey(name: 'label') SuggestLocationLabelModel suggestLocationLabel});
 
   $SuggestLocationLabelModelCopyWith<$Res> get suggestLocationLabel;
 }
@@ -94,7 +94,7 @@ abstract class _$$SuggestLocationModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'type') String type,
-      @JsonKey(name: 'lang') SuggestLocationLabelModel suggestLocationLabel});
+      @JsonKey(name: 'label') SuggestLocationLabelModel suggestLocationLabel});
 
   @override
   $SuggestLocationLabelModelCopyWith<$Res> get suggestLocationLabel;
@@ -132,7 +132,7 @@ class __$$SuggestLocationModelImplCopyWithImpl<$Res>
 class _$SuggestLocationModelImpl implements _SuggestLocationModel {
   _$SuggestLocationModelImpl(
       {@JsonKey(name: 'type') required this.type,
-      @JsonKey(name: 'lang') required this.suggestLocationLabel});
+      @JsonKey(name: 'label') required this.suggestLocationLabel});
 
   factory _$SuggestLocationModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$SuggestLocationModelImplFromJson(json);
@@ -141,7 +141,7 @@ class _$SuggestLocationModelImpl implements _SuggestLocationModel {
   @JsonKey(name: 'type')
   final String type;
   @override
-  @JsonKey(name: 'lang')
+  @JsonKey(name: 'label')
   final SuggestLocationLabelModel suggestLocationLabel;
 
   @override
@@ -182,7 +182,7 @@ class _$SuggestLocationModelImpl implements _SuggestLocationModel {
 abstract class _SuggestLocationModel implements SuggestLocationModel {
   factory _SuggestLocationModel(
           {@JsonKey(name: 'type') required final String type,
-          @JsonKey(name: 'lang')
+          @JsonKey(name: 'label')
           required final SuggestLocationLabelModel suggestLocationLabel}) =
       _$SuggestLocationModelImpl;
 
@@ -193,7 +193,7 @@ abstract class _SuggestLocationModel implements SuggestLocationModel {
   @JsonKey(name: 'type')
   String get type;
   @override
-  @JsonKey(name: 'lang')
+  @JsonKey(name: 'label')
   SuggestLocationLabelModel get suggestLocationLabel;
   @override
   @JsonKey(ignore: true)

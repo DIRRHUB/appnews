@@ -11,7 +11,7 @@ part '../../../../generated/data/model/remote/suggest_locations/suggest_location
 class SuggestLocationModel with _$SuggestLocationModel {
   factory SuggestLocationModel({
     @JsonKey(name: 'type') required String type,
-    @JsonKey(name: 'lang') required SuggestLocationLabelModel suggestLocationLabel,
+    @JsonKey(name: 'label') required SuggestLocationLabelModel suggestLocationLabel,
   }) = _SuggestLocationModel;
 
   factory SuggestLocationModel.fromJson(Json json) => _$SuggestLocationModelFromJson(json);
