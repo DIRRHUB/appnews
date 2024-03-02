@@ -4,5 +4,11 @@
 	"recentNews":"Recent News",
 	"selectArticle":"Select an article to read",
 	"popular":"Popular",
-	"recent":"Recent"
+	"recent":"Recent",
+	"location":"Location",
+	"categories":"Categories",
+	"language":"Language",
+	"sourceRank":"Source Rank",
+	"date":"Date",
+	"noResult":"No result"
 }

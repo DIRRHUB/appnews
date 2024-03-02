@@ -29,6 +29,10 @@ dependencies:
       url: https://github.com/PoradaApp/packages.git
       ref: custom_scaffold
       path: packages/flutter_adaptive_scaffold
+  cool_dropdown:
+    git:
+      url: https://github.com/PoradaApp/cool_dropdown.git
+      ref: master
 
   #UI
   cached_network_image: ^3.3.0

@@ -209,6 +209,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
+  cool_dropdown:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: "5d8f996133dd93840a4e690405c990a20ec6f688"
+      url: "https://github.com/PoradaApp/cool_dropdown.git"
+    source: git
+    version: "2.6.3"
   crypto:
     dependency: transitive
     description:

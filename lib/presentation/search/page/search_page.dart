@@ -1,3 +1,5 @@
+import 'package:appnews/presentation/search/page/components/search_filters.dart';
+import 'package:appnews/presentation/search/page/components/search_selected_filters.dart';
 import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -6,9 +8,14 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(PaddingConstants.extraLarge),
-      child: Placeholder(),
+    return const SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: PaddingConstants.extraLarge),
+      child: Column(
+        children: [
+          SearchSelectedFilters(),
+          SearchFilters(),
+        ],
+      ),
     );
   }
 }

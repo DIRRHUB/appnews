@@ -56,6 +56,7 @@ class OneTextField extends StatefulWidget {
   final BorderSide? focusedBorderSide;
   final Color? hoverColor;
   final bool? isCollapsed;
+  final Function()? onTap;
 
   const OneTextField({
     Key? key,
@@ -106,6 +107,7 @@ class OneTextField extends StatefulWidget {
     this.focusedBorderSide,
     this.hoverColor,
     this.isCollapsed,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -171,7 +173,10 @@ class _OneTextFieldState extends State<OneTextField> {
       expands: false,
       style: widget.textStyle?.copyWith(color: theme.colorScheme.onPrimary) ??
           theme.primaryTextTheme.bodyLarge?.copyWith(color: theme.colorScheme.onPrimary),
-      onTap: _requestFocus,
+      onTap: () {
+        _requestFocus();
+        widget.onTap?.call();
+      },
       validator: (value) {
         return widget.onValidate?.call(value);
       },

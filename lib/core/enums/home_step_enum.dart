@@ -1,0 +1,1 @@
+enum HomeStep { initial, search }
