@@ -1,18 +1,12 @@
+import 'package:appnews/core/extensions/localization_extension.dart';
 import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:appnews/shared/widgets/one_text_field.dart';
 import 'package:flutter/material.dart';
 
-class SearchHeader extends StatefulWidget {
-  const SearchHeader({super.key, required this.onTap});
-
+class SearchHeader extends StatelessWidget {
+  const SearchHeader({super.key, required this.onTap, required this.controller});
+  final TextEditingController controller;
   final Function() onTap;
-
-  @override
-  State<SearchHeader> createState() => _SearchHeaderState();
-}
-
-class _SearchHeaderState extends State<SearchHeader> {
-  final TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +20,9 @@ class _SearchHeaderState extends State<SearchHeader> {
           top: PaddingConstants.normal,
         ),
         child: OneTextField(
-          labelText: 'Search',
+          labelText: context.loc.search,
           controller: controller,
-          onTap: widget.onTap,
+          onTap: onTap,
         ),
       ),
     );

@@ -1,8 +1,10 @@
 import 'package:appnews/core/base/failure.dart';
 import 'package:appnews/core/helper/language_helper.dart';
 import 'package:appnews/core/services/regex_service.dart';
+import 'package:appnews/data/model/remote/requests/get_events_request.dart';
 import 'package:appnews/data/model/remote/requests/suggest_categories_request.dart';
 import 'package:appnews/data/model/remote/requests/suggest_locations_request.dart';
+import 'package:appnews/domain/entity/get_events/get_events_item.dart';
 import 'package:appnews/domain/entity/suggest_categories/suggest_category_item.dart';
 import 'package:appnews/domain/entity/suggest_languages/suggest_language_item.dart';
 import 'package:appnews/domain/entity/suggest_locations/suggest_location_item.dart';
@@ -111,5 +113,17 @@ class SearchCubit extends Cubit<SearchState> {
         hasEndDate: false,
       ),
     );
+  }
+
+  void search(String title) async {
+    final GetEventRequest request = GetEventRequest(
+      request: title,
+      locations: state.selectedLocations,
+      categories: state.selectedCategories,
+      languages: state.selectedLanguages,
+      startDate: state.hasStartDate ? state.selectedStartDate : null,
+      endDate: state.hasEndDate ? state.selectedEndDate : null,
+    );
+    final Either<Failure, GetEventsItem> result = await _repository.getEvents(request);
   }
 }

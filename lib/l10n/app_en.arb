@@ -16,5 +16,6 @@
 	"dateEnd":"End Date",
 	"selectedDate":"Selected Date",
 	"dateRange":"Date Range",
-	"clear":"Clear"
+	"clear":"Clear",
+	"search":"Search"
 }

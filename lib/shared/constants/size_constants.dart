@@ -3,4 +3,5 @@ abstract class SizeConstants {
   static const double mediumPageBreakpoint = 900;
   static const double smallPageBreakpoint = 400;
   static const double smallCalendarWidth = 300;
+  static const double defaultButtonHeight = 52;
 }

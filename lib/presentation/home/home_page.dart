@@ -24,6 +24,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final TextEditingController searchController = TextEditingController();
   final ArticlesCubit articlesBloc = serviceLocator<ArticlesCubit>()..getMoreRecentArticles();
   final HomeCubit homeBloc = serviceLocator<HomeCubit>();
   final SearchCubit searchBloc = serviceLocator<SearchCubit>();
@@ -54,6 +55,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       children: [
                         SearchHeader(
+                          controller: searchController,
                           onTap: () {
                             homeBloc.setStep(HomeStep.search);
                           },
@@ -70,6 +72,7 @@ class _HomePageState extends State<HomePage> {
               childSmall: Column(
                 children: [
                   SearchHeader(
+                    controller: searchController,
                     onTap: () {
                       homeBloc.setStep(HomeStep.search);
                     },
@@ -87,7 +90,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildHomeStep(HomeStep step) {
     switch (step) {
       case HomeStep.search:
-        return const SearchPage();
+        return SearchPage(searchController: searchController);
       case HomeStep.initial:
         return const ArticlesPage();
     }

@@ -2,7 +2,9 @@ import 'package:appnews/core/base/failure.dart';
 import 'package:appnews/core/helper/repository_helper.dart';
 import 'package:appnews/data/datasources/remote/news_remote_datasource.dart';
 import 'package:appnews/data/model/remote/get_articles/get_articles_model.dart';
+import 'package:appnews/data/model/remote/get_events/get_events_model.dart';
 import 'package:appnews/data/model/remote/requests/get_articles_request.dart';
+import 'package:appnews/data/model/remote/requests/get_events_request.dart';
 import 'package:appnews/data/model/remote/requests/stream_of_articles_request.dart';
 import 'package:appnews/data/model/remote/requests/suggest_categories_request.dart';
 import 'package:appnews/data/model/remote/requests/suggest_locations_request.dart';
@@ -10,6 +12,7 @@ import 'package:appnews/data/model/remote/stream_of_articles/recent_activity_art
 import 'package:appnews/data/model/remote/suggest_categories/suggest_category_model.dart';
 import 'package:appnews/data/model/remote/suggest_locations/suggest_location_model.dart';
 import 'package:appnews/domain/entity/get_articles/get_articles_item.dart';
+import 'package:appnews/domain/entity/get_events/get_events_item.dart';
 import 'package:appnews/domain/entity/stream_of_articles/recent_activity_articles_item.dart';
 import 'package:appnews/domain/entity/suggest_categories/suggest_category_item.dart';
 import 'package:appnews/domain/entity/suggest_locations/suggest_location_item.dart';
@@ -45,6 +48,13 @@ class NewsRemoteRepository {
     return execute(() async {
       final List<SuggestLocationModel> locations = await _datasource.suggestLocations(request.body);
       return locations.map(SuggestLocationItem.fromModel).toList();
+    });
+  }
+
+  Future<Either<Failure, GetEventsItem>> getEvents(GetEventRequest request) {
+    return execute(() async {
+      final GetEventsModel model = await _datasource.getEvents(request.body);
+      return GetEventsItem.fromModel(model);
     });
   }
 }
