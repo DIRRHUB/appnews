@@ -11,6 +11,7 @@ class SuggestLocationItem with _$SuggestLocationItem {
   factory SuggestLocationItem({
     required String type,
     required SuggestLocationLabelItem suggestLocationLabel,
+    required String wikiUri,
   }) = _SuggestLocationItem;
 
   SuggestLocationItem._();
@@ -19,6 +20,7 @@ class SuggestLocationItem with _$SuggestLocationItem {
     return SuggestLocationItem(
       type: model.type,
       suggestLocationLabel: SuggestLocationLabelItem.fromModel(model.suggestLocationLabel),
+      wikiUri: model.wikiUri,
     );
   }
 
@@ -26,6 +28,7 @@ class SuggestLocationItem with _$SuggestLocationItem {
     return SuggestLocationItem(
       type: '',
       suggestLocationLabel: SuggestLocationLabelItem.empty(),
+      wikiUri: '',
     );
   }
 }

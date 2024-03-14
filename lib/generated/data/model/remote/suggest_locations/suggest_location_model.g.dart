@@ -12,6 +12,7 @@ _$SuggestLocationModelImpl _$$SuggestLocationModelImplFromJson(
       type: json['type'] as String,
       suggestLocationLabel: SuggestLocationLabelModel.fromJson(
           json['label'] as Map<String, dynamic>),
+      wikiUri: json['wikiUri'] as String,
     );
 
 Map<String, dynamic> _$$SuggestLocationModelImplToJson(
@@ -19,4 +20,5 @@ Map<String, dynamic> _$$SuggestLocationModelImplToJson(
     <String, dynamic>{
       'type': instance.type,
       'label': instance.suggestLocationLabel.toJson(),
+      'wikiUri': instance.wikiUri,
     };

@@ -25,6 +25,8 @@ mixin _$SuggestLocationModel {
   @JsonKey(name: 'label')
   SuggestLocationLabelModel get suggestLocationLabel =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'wikiUri')
+  String get wikiUri => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,7 +42,8 @@ abstract class $SuggestLocationModelCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'type') String type,
-      @JsonKey(name: 'label') SuggestLocationLabelModel suggestLocationLabel});
+      @JsonKey(name: 'label') SuggestLocationLabelModel suggestLocationLabel,
+      @JsonKey(name: 'wikiUri') String wikiUri});
 
   $SuggestLocationLabelModelCopyWith<$Res> get suggestLocationLabel;
 }
@@ -61,6 +64,7 @@ class _$SuggestLocationModelCopyWithImpl<$Res,
   $Res call({
     Object? type = null,
     Object? suggestLocationLabel = null,
+    Object? wikiUri = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
@@ -71,6 +75,10 @@ class _$SuggestLocationModelCopyWithImpl<$Res,
           ? _value.suggestLocationLabel
           : suggestLocationLabel // ignore: cast_nullable_to_non_nullable
               as SuggestLocationLabelModel,
+      wikiUri: null == wikiUri
+          ? _value.wikiUri
+          : wikiUri // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 
@@ -94,7 +102,8 @@ abstract class _$$SuggestLocationModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'type') String type,
-      @JsonKey(name: 'label') SuggestLocationLabelModel suggestLocationLabel});
+      @JsonKey(name: 'label') SuggestLocationLabelModel suggestLocationLabel,
+      @JsonKey(name: 'wikiUri') String wikiUri});
 
   @override
   $SuggestLocationLabelModelCopyWith<$Res> get suggestLocationLabel;
@@ -113,6 +122,7 @@ class __$$SuggestLocationModelImplCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
     Object? suggestLocationLabel = null,
+    Object? wikiUri = null,
   }) {
     return _then(_$SuggestLocationModelImpl(
       type: null == type
@@ -123,6 +133,10 @@ class __$$SuggestLocationModelImplCopyWithImpl<$Res>
           ? _value.suggestLocationLabel
           : suggestLocationLabel // ignore: cast_nullable_to_non_nullable
               as SuggestLocationLabelModel,
+      wikiUri: null == wikiUri
+          ? _value.wikiUri
+          : wikiUri // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -132,7 +146,8 @@ class __$$SuggestLocationModelImplCopyWithImpl<$Res>
 class _$SuggestLocationModelImpl implements _SuggestLocationModel {
   _$SuggestLocationModelImpl(
       {@JsonKey(name: 'type') required this.type,
-      @JsonKey(name: 'label') required this.suggestLocationLabel});
+      @JsonKey(name: 'label') required this.suggestLocationLabel,
+      @JsonKey(name: 'wikiUri') required this.wikiUri});
 
   factory _$SuggestLocationModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$SuggestLocationModelImplFromJson(json);
@@ -143,10 +158,13 @@ class _$SuggestLocationModelImpl implements _SuggestLocationModel {
   @override
   @JsonKey(name: 'label')
   final SuggestLocationLabelModel suggestLocationLabel;
+  @override
+  @JsonKey(name: 'wikiUri')
+  final String wikiUri;
 
   @override
   String toString() {
-    return 'SuggestLocationModel(type: $type, suggestLocationLabel: $suggestLocationLabel)';
+    return 'SuggestLocationModel(type: $type, suggestLocationLabel: $suggestLocationLabel, wikiUri: $wikiUri)';
   }
 
   @override
@@ -156,12 +174,14 @@ class _$SuggestLocationModelImpl implements _SuggestLocationModel {
             other is _$SuggestLocationModelImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.suggestLocationLabel, suggestLocationLabel) ||
-                other.suggestLocationLabel == suggestLocationLabel));
+                other.suggestLocationLabel == suggestLocationLabel) &&
+            (identical(other.wikiUri, wikiUri) || other.wikiUri == wikiUri));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, type, suggestLocationLabel);
+  int get hashCode =>
+      Object.hash(runtimeType, type, suggestLocationLabel, wikiUri);
 
   @JsonKey(ignore: true)
   @override
@@ -183,7 +203,8 @@ abstract class _SuggestLocationModel implements SuggestLocationModel {
   factory _SuggestLocationModel(
           {@JsonKey(name: 'type') required final String type,
           @JsonKey(name: 'label')
-          required final SuggestLocationLabelModel suggestLocationLabel}) =
+          required final SuggestLocationLabelModel suggestLocationLabel,
+          @JsonKey(name: 'wikiUri') required final String wikiUri}) =
       _$SuggestLocationModelImpl;
 
   factory _SuggestLocationModel.fromJson(Map<String, dynamic> json) =
@@ -195,6 +216,9 @@ abstract class _SuggestLocationModel implements SuggestLocationModel {
   @override
   @JsonKey(name: 'label')
   SuggestLocationLabelModel get suggestLocationLabel;
+  @override
+  @JsonKey(name: 'wikiUri')
+  String get wikiUri;
   @override
   @JsonKey(ignore: true)
   _$$SuggestLocationModelImplCopyWith<_$SuggestLocationModelImpl>

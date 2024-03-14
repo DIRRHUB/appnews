@@ -1,0 +1,1 @@
+enum SearchStep { initial, result }

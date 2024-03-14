@@ -1,30 +1,64 @@
+import 'package:appnews/core/enums/home_step_enum.dart';
+import 'package:appnews/core/enums/search_step_enum.dart';
 import 'package:appnews/core/extensions/localization_extension.dart';
+import 'package:appnews/presentation/home/bloc/home_cubit.dart';
+import 'package:appnews/presentation/search/bloc/search_cubit.dart';
+import 'package:appnews/presentation/search/bloc/search_state.dart';
 import 'package:appnews/shared/constants/dimension_constants.dart';
+import 'package:appnews/shared/widgets/one_icon_button.dart';
 import 'package:appnews/shared/widgets/one_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchHeader extends StatelessWidget {
-  const SearchHeader({super.key, required this.onTap, required this.controller});
+  const SearchHeader({super.key, required this.onChanged, required this.controller});
   final TextEditingController controller;
-  final Function() onTap;
+  final Function(String value) onChanged;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
-      child: Container(
-        padding: const EdgeInsets.only(
-          left: PaddingConstants.extraLarge,
-          right: PaddingConstants.extraLarge,
-          bottom: PaddingConstants.extraLarge,
-          top: PaddingConstants.normal,
-        ),
-        child: OneTextField(
-          labelText: context.loc.search,
-          controller: controller,
-          onTap: onTap,
-        ),
-      ),
+    final theme = Theme.of(context);
+    final SearchCubit searchBloc = BlocProvider.of<SearchCubit>(context);
+    final HomeCubit homeBloc = BlocProvider.of<HomeCubit>(context);
+    return BlocBuilder<SearchCubit, SearchState>(
+      builder: (context, state) {
+        return Padding(
+          padding: const EdgeInsets.only(
+            left: PaddingConstants.extraLarge,
+            right: PaddingConstants.extraLarge,
+            bottom: PaddingConstants.extraLarge,
+            top: PaddingConstants.normal,
+          ),
+          child: Row(
+            children: [
+              if (state.step == SearchStep.result) ...[
+                OneIconButton(
+                  icon: Icons.arrow_back,
+                  onTap: () {
+                    controller.clear();
+                    homeBloc.setStep(HomeStep.initial);
+                    searchBloc.backToInitial();
+                  },
+                  backgroundColor: theme.colorScheme.surface,
+                  height: PaddingConstants.extraImmenseSmall,
+                  width: PaddingConstants.extraImmenseSmall,
+                  iconSize: DimensionConstants.iconNormal,
+                  borderSide: BorderSide(color: theme.colorScheme.surfaceVariant),
+                  borderRadius: BorderRadius.circular(BorderRadiusConstants.large),
+                ),
+                const SizedBox(width: PaddingConstants.medium),
+              ],
+              Expanded(
+                child: OneTextField(
+                  labelText: context.loc.search,
+                  controller: controller,
+                  onChanged: onChanged,
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

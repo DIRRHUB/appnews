@@ -20,6 +20,8 @@ SuggestCategoryModel _$SuggestCategoryModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SuggestCategoryModel {
+  @JsonKey(name: 'uri')
+  String get uri => throw _privateConstructorUsedError;
   @JsonKey(name: 'label')
   String get label => throw _privateConstructorUsedError;
   @JsonKey(name: 'parentUri')
@@ -38,7 +40,8 @@ abstract class $SuggestCategoryModelCopyWith<$Res> {
       _$SuggestCategoryModelCopyWithImpl<$Res, SuggestCategoryModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'label') String label,
+      {@JsonKey(name: 'uri') String uri,
+      @JsonKey(name: 'label') String label,
       @JsonKey(name: 'parentUri') String parentUri});
 }
 
@@ -56,10 +59,15 @@ class _$SuggestCategoryModelCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? uri = null,
     Object? label = null,
     Object? parentUri = null,
   }) {
     return _then(_value.copyWith(
+      uri: null == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
       label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
@@ -81,7 +89,8 @@ abstract class _$$SuggestCategoryModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'label') String label,
+      {@JsonKey(name: 'uri') String uri,
+      @JsonKey(name: 'label') String label,
       @JsonKey(name: 'parentUri') String parentUri});
 }
 
@@ -96,10 +105,15 @@ class __$$SuggestCategoryModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? uri = null,
     Object? label = null,
     Object? parentUri = null,
   }) {
     return _then(_$SuggestCategoryModelImpl(
+      uri: null == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
       label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
@@ -116,12 +130,16 @@ class __$$SuggestCategoryModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SuggestCategoryModelImpl implements _SuggestCategoryModel {
   _$SuggestCategoryModelImpl(
-      {@JsonKey(name: 'label') required this.label,
+      {@JsonKey(name: 'uri') required this.uri,
+      @JsonKey(name: 'label') required this.label,
       @JsonKey(name: 'parentUri') required this.parentUri});
 
   factory _$SuggestCategoryModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$SuggestCategoryModelImplFromJson(json);
 
+  @override
+  @JsonKey(name: 'uri')
+  final String uri;
   @override
   @JsonKey(name: 'label')
   final String label;
@@ -131,7 +149,7 @@ class _$SuggestCategoryModelImpl implements _SuggestCategoryModel {
 
   @override
   String toString() {
-    return 'SuggestCategoryModel(label: $label, parentUri: $parentUri)';
+    return 'SuggestCategoryModel(uri: $uri, label: $label, parentUri: $parentUri)';
   }
 
   @override
@@ -139,6 +157,7 @@ class _$SuggestCategoryModelImpl implements _SuggestCategoryModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuggestCategoryModelImpl &&
+            (identical(other.uri, uri) || other.uri == uri) &&
             (identical(other.label, label) || other.label == label) &&
             (identical(other.parentUri, parentUri) ||
                 other.parentUri == parentUri));
@@ -146,7 +165,7 @@ class _$SuggestCategoryModelImpl implements _SuggestCategoryModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, label, parentUri);
+  int get hashCode => Object.hash(runtimeType, uri, label, parentUri);
 
   @JsonKey(ignore: true)
   @override
@@ -166,13 +185,17 @@ class _$SuggestCategoryModelImpl implements _SuggestCategoryModel {
 
 abstract class _SuggestCategoryModel implements SuggestCategoryModel {
   factory _SuggestCategoryModel(
-          {@JsonKey(name: 'label') required final String label,
+          {@JsonKey(name: 'uri') required final String uri,
+          @JsonKey(name: 'label') required final String label,
           @JsonKey(name: 'parentUri') required final String parentUri}) =
       _$SuggestCategoryModelImpl;
 
   factory _SuggestCategoryModel.fromJson(Map<String, dynamic> json) =
       _$SuggestCategoryModelImpl.fromJson;
 
+  @override
+  @JsonKey(name: 'uri')
+  String get uri;
   @override
   @JsonKey(name: 'label')
   String get label;

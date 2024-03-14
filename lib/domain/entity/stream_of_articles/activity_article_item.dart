@@ -1,6 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:appnews/data/model/remote/stream_of_articles/activity_article_model.dart';
+import 'package:appnews/domain/entity/get_events/get_events_result_item.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '../../../generated/domain/entity/stream_of_articles/activity_article_item.freezed.dart';
@@ -45,6 +46,19 @@ class ActivityArticleItem with _$ActivityArticleItem {
       title: '',
       body: '',
       image: '',
+    );
+  }
+
+  factory ActivityArticleItem.fromEvent(GetEventsResultItem event) {
+    return ActivityArticleItem(
+      uri: event.uri,
+      language: '',
+      isDuplicate: false,
+      dateTimePublished: event.eventDate,
+      url: '',
+      title: event.title,
+      body: event.summary,
+      image: event.images.isNotEmpty ? event.images.first : '',
     );
   }
 }

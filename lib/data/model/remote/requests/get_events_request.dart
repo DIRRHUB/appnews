@@ -12,11 +12,13 @@ class GetEventRequest {
   final List<SuggestLanguageItem> languages;
   final DateTime? startDate;
   final DateTime? endDate;
+  final int page;
   GetEventRequest({
     required this.request,
     required this.locations,
     required this.categories,
     required this.languages,
+    required this.page,
     this.startDate,
     this.endDate,
   });
@@ -38,6 +40,8 @@ class GetEventRequest {
     'includeConceptImage': true,
     'eventImageCount': 1,
     'storyImageCount': 1,
+    'eventsPage': page,
+    'eventsCount': 50,
     'apiKey': GlobalConstants.newsApiKey,
   };
 
@@ -55,7 +59,7 @@ class GetEventRequest {
       return null;
     } else {
       return {
-        '\$or': categories.map((e) => {'categoryUri': "'${e.parentUri}'"}).toList(),
+        '\$or': categories.map((e) => {'categoryUri': e.uri}).toList(),
       };
     }
   }
@@ -65,7 +69,7 @@ class GetEventRequest {
       return null;
     } else {
       return {
-        '\$or': locations.map((e) => {'locationUri': "'${e.suggestLocationLabel.eng}'"}).toList(),
+        '\$or': locations.map((e) => {'locationUri': e.wikiUri}).toList(),
       };
     }
   }
@@ -75,7 +79,7 @@ class GetEventRequest {
       return null;
     } else {
       return {
-        '\$or': languages.map((e) => {'lang': "'${e.code}'"}).toList(),
+        '\$or': languages.map((e) => {'lang': e.code}).toList(),
       };
     }
   }
@@ -86,16 +90,16 @@ class GetEventRequest {
     } else {
       if (startDate != null && endDate == null) {
         return {
-          'dateStart': '${startDate?.toSimpleFormat()}',
+          'dateStart': startDate?.toSimpleFormat(),
         };
       } else if (startDate == null && endDate != null) {
         return {
-          'dateEnd': '${endDate?.toSimpleFormat()}',
+          'dateEnd': endDate?.toSimpleFormat(),
         };
       } else {
         return {
-          'dateStart': '${startDate?.toSimpleFormat()}',
-          'dateEnd': '${endDate?.toSimpleFormat()}',
+          'dateStart': startDate?.toSimpleFormat(),
+          'dateEnd': endDate?.toSimpleFormat(),
         };
       }
     }

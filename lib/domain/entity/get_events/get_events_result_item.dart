@@ -20,8 +20,8 @@ class GetEventsResultItem with _$GetEventsResultItem {
     return GetEventsResultItem(
       uri: model.uri,
       eventDate: DateTime.parse(model.eventDate).toLocal(),
-      title: model.title ?? '',
-      summary: model.summary ?? '',
+      title: (model.title as Map).values.first.toString(),
+      summary: (model.summary as Map).values.first.toString(),
       category: model.category ?? '',
       images: model.images,
     );

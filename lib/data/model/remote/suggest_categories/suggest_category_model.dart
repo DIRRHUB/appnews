@@ -9,6 +9,7 @@ part '../../../../generated/data/model/remote/suggest_categories/suggest_categor
 @freezed
 class SuggestCategoryModel with _$SuggestCategoryModel {
   factory SuggestCategoryModel({
+    @JsonKey(name: 'uri') required String uri,
     @JsonKey(name: 'label') required String label,
     @JsonKey(name: 'parentUri') required String parentUri,
   }) = _SuggestCategoryModel;

@@ -56,8 +56,13 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         SearchHeader(
                           controller: searchController,
-                          onTap: () {
-                            homeBloc.setStep(HomeStep.search);
+                          onChanged: (value) {
+                            if (value.isNotEmpty) {
+                              homeBloc.setStep(HomeStep.search);
+                            } else {
+                              homeBloc.setStep(HomeStep.initial);
+                              searchBloc.backToInitial();
+                            }
                           },
                         ),
                         Expanded(child: _buildHomeStep(state.step)),
@@ -73,8 +78,13 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SearchHeader(
                     controller: searchController,
-                    onTap: () {
-                      homeBloc.setStep(HomeStep.search);
+                    onChanged: (value) {
+                      if (value.isNotEmpty) {
+                        homeBloc.setStep(HomeStep.search);
+                      } else {
+                        homeBloc.setStep(HomeStep.initial);
+                        searchBloc.backToInitial();
+                      }
                     },
                   ),
                   Expanded(child: _buildHomeStep(state.step)),

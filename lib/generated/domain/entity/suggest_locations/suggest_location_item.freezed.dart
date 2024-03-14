@@ -19,6 +19,7 @@ mixin _$SuggestLocationItem {
   String get type => throw _privateConstructorUsedError;
   SuggestLocationLabelItem get suggestLocationLabel =>
       throw _privateConstructorUsedError;
+  String get wikiUri => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SuggestLocationItemCopyWith<SuggestLocationItem> get copyWith =>
@@ -31,7 +32,10 @@ abstract class $SuggestLocationItemCopyWith<$Res> {
           SuggestLocationItem value, $Res Function(SuggestLocationItem) then) =
       _$SuggestLocationItemCopyWithImpl<$Res, SuggestLocationItem>;
   @useResult
-  $Res call({String type, SuggestLocationLabelItem suggestLocationLabel});
+  $Res call(
+      {String type,
+      SuggestLocationLabelItem suggestLocationLabel,
+      String wikiUri});
 
   $SuggestLocationLabelItemCopyWith<$Res> get suggestLocationLabel;
 }
@@ -51,6 +55,7 @@ class _$SuggestLocationItemCopyWithImpl<$Res, $Val extends SuggestLocationItem>
   $Res call({
     Object? type = null,
     Object? suggestLocationLabel = null,
+    Object? wikiUri = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
@@ -61,6 +66,10 @@ class _$SuggestLocationItemCopyWithImpl<$Res, $Val extends SuggestLocationItem>
           ? _value.suggestLocationLabel
           : suggestLocationLabel // ignore: cast_nullable_to_non_nullable
               as SuggestLocationLabelItem,
+      wikiUri: null == wikiUri
+          ? _value.wikiUri
+          : wikiUri // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 
@@ -82,7 +91,10 @@ abstract class _$$SuggestLocationItemImplCopyWith<$Res>
       __$$SuggestLocationItemImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, SuggestLocationLabelItem suggestLocationLabel});
+  $Res call(
+      {String type,
+      SuggestLocationLabelItem suggestLocationLabel,
+      String wikiUri});
 
   @override
   $SuggestLocationLabelItemCopyWith<$Res> get suggestLocationLabel;
@@ -101,6 +113,7 @@ class __$$SuggestLocationItemImplCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
     Object? suggestLocationLabel = null,
+    Object? wikiUri = null,
   }) {
     return _then(_$SuggestLocationItemImpl(
       type: null == type
@@ -111,6 +124,10 @@ class __$$SuggestLocationItemImplCopyWithImpl<$Res>
           ? _value.suggestLocationLabel
           : suggestLocationLabel // ignore: cast_nullable_to_non_nullable
               as SuggestLocationLabelItem,
+      wikiUri: null == wikiUri
+          ? _value.wikiUri
+          : wikiUri // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -119,17 +136,21 @@ class __$$SuggestLocationItemImplCopyWithImpl<$Res>
 
 class _$SuggestLocationItemImpl extends _SuggestLocationItem {
   _$SuggestLocationItemImpl(
-      {required this.type, required this.suggestLocationLabel})
+      {required this.type,
+      required this.suggestLocationLabel,
+      required this.wikiUri})
       : super._();
 
   @override
   final String type;
   @override
   final SuggestLocationLabelItem suggestLocationLabel;
+  @override
+  final String wikiUri;
 
   @override
   String toString() {
-    return 'SuggestLocationItem(type: $type, suggestLocationLabel: $suggestLocationLabel)';
+    return 'SuggestLocationItem(type: $type, suggestLocationLabel: $suggestLocationLabel, wikiUri: $wikiUri)';
   }
 
   @override
@@ -139,11 +160,13 @@ class _$SuggestLocationItemImpl extends _SuggestLocationItem {
             other is _$SuggestLocationItemImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.suggestLocationLabel, suggestLocationLabel) ||
-                other.suggestLocationLabel == suggestLocationLabel));
+                other.suggestLocationLabel == suggestLocationLabel) &&
+            (identical(other.wikiUri, wikiUri) || other.wikiUri == wikiUri));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, suggestLocationLabel);
+  int get hashCode =>
+      Object.hash(runtimeType, type, suggestLocationLabel, wikiUri);
 
   @JsonKey(ignore: true)
   @override
@@ -155,15 +178,17 @@ class _$SuggestLocationItemImpl extends _SuggestLocationItem {
 
 abstract class _SuggestLocationItem extends SuggestLocationItem {
   factory _SuggestLocationItem(
-          {required final String type,
-          required final SuggestLocationLabelItem suggestLocationLabel}) =
-      _$SuggestLocationItemImpl;
+      {required final String type,
+      required final SuggestLocationLabelItem suggestLocationLabel,
+      required final String wikiUri}) = _$SuggestLocationItemImpl;
   _SuggestLocationItem._() : super._();
 
   @override
   String get type;
   @override
   SuggestLocationLabelItem get suggestLocationLabel;
+  @override
+  String get wikiUri;
   @override
   @JsonKey(ignore: true)
   _$$SuggestLocationItemImplCopyWith<_$SuggestLocationItemImpl> get copyWith =>

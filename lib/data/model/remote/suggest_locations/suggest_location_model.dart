@@ -12,6 +12,7 @@ class SuggestLocationModel with _$SuggestLocationModel {
   factory SuggestLocationModel({
     @JsonKey(name: 'type') required String type,
     @JsonKey(name: 'label') required SuggestLocationLabelModel suggestLocationLabel,
+    @JsonKey(name: 'wikiUri') required String wikiUri,
   }) = _SuggestLocationModel;
 
   factory SuggestLocationModel.fromJson(Json json) => _$SuggestLocationModelFromJson(json);

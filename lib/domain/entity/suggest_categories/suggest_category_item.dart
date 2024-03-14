@@ -8,6 +8,7 @@ part '../../../generated/domain/entity/suggest_categories/suggest_category_item.
 @freezed
 class SuggestCategoryItem with _$SuggestCategoryItem {
   factory SuggestCategoryItem({
+    required String uri,
     required String label,
     required String parentUri,
   }) = _SuggestCategoryItem;
@@ -16,6 +17,7 @@ class SuggestCategoryItem with _$SuggestCategoryItem {
 
   factory SuggestCategoryItem.fromModel(SuggestCategoryModel model) {
     return SuggestCategoryItem(
+      uri: model.uri,
       label: model.label,
       parentUri: model.parentUri,
     );
@@ -23,6 +25,7 @@ class SuggestCategoryItem with _$SuggestCategoryItem {
 
   factory SuggestCategoryItem.empty() {
     return SuggestCategoryItem(
+      uri: '',
       label: '',
       parentUri: '',
     );

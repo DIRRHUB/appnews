@@ -11,8 +11,8 @@ class GetEventsResultModel with _$GetEventsResultModel {
   factory GetEventsResultModel({
     @JsonKey(name: 'uri') required String uri,
     @JsonKey(name: 'eventDate') required String eventDate,
-    @JsonKey(name: 'title') required String? title,
-    @JsonKey(name: 'summary') required String? summary,
+    @JsonKey(name: 'title') required dynamic title,
+    @JsonKey(name: 'summary') required dynamic summary,
     @JsonKey(name: 'category') required String? category,
     @JsonKey(name: 'images') required List<String> images,
   }) = _GetEventsModel;

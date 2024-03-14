@@ -1,4 +1,6 @@
 import 'package:appnews/core/base/failure.dart';
+import 'package:appnews/core/enums/one_status_enum.dart';
+import 'package:appnews/core/enums/search_step_enum.dart';
 import 'package:appnews/core/helper/language_helper.dart';
 import 'package:appnews/core/services/regex_service.dart';
 import 'package:appnews/data/model/remote/requests/get_events_request.dart';
@@ -115,7 +117,8 @@ class SearchCubit extends Cubit<SearchState> {
     );
   }
 
-  void search(String title) async {
+  void search({required String title, int page = 1}) async {
+    emit(state.copyWith(status: OneStatus.loading));
     final GetEventRequest request = GetEventRequest(
       request: title,
       locations: state.selectedLocations,
@@ -123,7 +126,36 @@ class SearchCubit extends Cubit<SearchState> {
       languages: state.selectedLanguages,
       startDate: state.hasStartDate ? state.selectedStartDate : null,
       endDate: state.hasEndDate ? state.selectedEndDate : null,
+      page: page,
     );
     final Either<Failure, GetEventsItem> result = await _repository.getEvents(request);
+    result.fold(
+      (l) {
+        emit(state.copyWith(status: OneStatus.initial, errorMessage: l.message));
+      },
+      (r) {
+        emit(state.copyWith(status: OneStatus.initial, getEvents: r, step: SearchStep.result));
+      },
+    );
+  }
+
+  void backToInitial() {
+    emit(
+      state.copyWith(
+        status: OneStatus.initial,
+        step: SearchStep.initial,
+        getEvents: GetEventsItem.empty(),
+        locations: [],
+        categories: [],
+        languages: [],
+        selectedCategories: [],
+        selectedLanguages: [],
+        selectedLocations: [],
+        selectedStartDate: DateTime.now(),
+        selectedEndDate: DateTime.now(),
+        hasStartDate: false,
+        hasEndDate: false,
+      ),
+    );
   }
 }

@@ -20,6 +20,7 @@ abstract class PaddingConstants {
   static const double immense = 32;
   static const double extraImmense = 40;
   static const double extraImmensePlus = 60;
+  static const double extraImmenseSmall = extraImmense + normal; //48
   static double get extraImmenseMedium => extraImmense + medium; //52
   static double get largeExtraSmall => large + extraSmall; //20
   static double get largeSmall => small + extraSmall; //10

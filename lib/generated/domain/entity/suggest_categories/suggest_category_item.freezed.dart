@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SuggestCategoryItem {
+  String get uri => throw _privateConstructorUsedError;
   String get label => throw _privateConstructorUsedError;
   String get parentUri => throw _privateConstructorUsedError;
 
@@ -30,7 +31,7 @@ abstract class $SuggestCategoryItemCopyWith<$Res> {
           SuggestCategoryItem value, $Res Function(SuggestCategoryItem) then) =
       _$SuggestCategoryItemCopyWithImpl<$Res, SuggestCategoryItem>;
   @useResult
-  $Res call({String label, String parentUri});
+  $Res call({String uri, String label, String parentUri});
 }
 
 /// @nodoc
@@ -46,10 +47,15 @@ class _$SuggestCategoryItemCopyWithImpl<$Res, $Val extends SuggestCategoryItem>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? uri = null,
     Object? label = null,
     Object? parentUri = null,
   }) {
     return _then(_value.copyWith(
+      uri: null == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
       label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
@@ -70,7 +76,7 @@ abstract class _$$SuggestCategoryItemImplCopyWith<$Res>
       __$$SuggestCategoryItemImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String label, String parentUri});
+  $Res call({String uri, String label, String parentUri});
 }
 
 /// @nodoc
@@ -84,10 +90,15 @@ class __$$SuggestCategoryItemImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? uri = null,
     Object? label = null,
     Object? parentUri = null,
   }) {
     return _then(_$SuggestCategoryItemImpl(
+      uri: null == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
       label: null == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
@@ -103,9 +114,12 @@ class __$$SuggestCategoryItemImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuggestCategoryItemImpl extends _SuggestCategoryItem {
-  _$SuggestCategoryItemImpl({required this.label, required this.parentUri})
+  _$SuggestCategoryItemImpl(
+      {required this.uri, required this.label, required this.parentUri})
       : super._();
 
+  @override
+  final String uri;
   @override
   final String label;
   @override
@@ -113,7 +127,7 @@ class _$SuggestCategoryItemImpl extends _SuggestCategoryItem {
 
   @override
   String toString() {
-    return 'SuggestCategoryItem(label: $label, parentUri: $parentUri)';
+    return 'SuggestCategoryItem(uri: $uri, label: $label, parentUri: $parentUri)';
   }
 
   @override
@@ -121,13 +135,14 @@ class _$SuggestCategoryItemImpl extends _SuggestCategoryItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuggestCategoryItemImpl &&
+            (identical(other.uri, uri) || other.uri == uri) &&
             (identical(other.label, label) || other.label == label) &&
             (identical(other.parentUri, parentUri) ||
                 other.parentUri == parentUri));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, label, parentUri);
+  int get hashCode => Object.hash(runtimeType, uri, label, parentUri);
 
   @JsonKey(ignore: true)
   @override
@@ -139,10 +154,13 @@ class _$SuggestCategoryItemImpl extends _SuggestCategoryItem {
 
 abstract class _SuggestCategoryItem extends SuggestCategoryItem {
   factory _SuggestCategoryItem(
-      {required final String label,
+      {required final String uri,
+      required final String label,
       required final String parentUri}) = _$SuggestCategoryItemImpl;
   _SuggestCategoryItem._() : super._();
 
+  @override
+  String get uri;
   @override
   String get label;
   @override
