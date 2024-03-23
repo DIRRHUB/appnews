@@ -22,6 +22,7 @@ class SearchState extends Equatable {
     required this.hasEndDate,
     required this.getEvents,
     required this.errorMessage,
+    required this.searchRequest,
   });
   final OneStatus status;
   final SearchStep step;
@@ -37,6 +38,7 @@ class SearchState extends Equatable {
   final bool hasEndDate;
   final GetEventsItem getEvents;
   final String errorMessage;
+  final String searchRequest;
 
   factory SearchState.initial() {
     return SearchState(
@@ -54,6 +56,7 @@ class SearchState extends Equatable {
       hasEndDate: false,
       getEvents: GetEventsItem.empty(),
       errorMessage: '',
+      searchRequest: '',
     );
   }
 
@@ -73,6 +76,7 @@ class SearchState extends Equatable {
         hasEndDate,
         getEvents,
         errorMessage,
+        searchRequest,
       ];
 
   SearchState copyWith({
@@ -90,6 +94,7 @@ class SearchState extends Equatable {
     bool? hasEndDate,
     GetEventsItem? getEvents,
     String? errorMessage,
+    String? searchRequest,
   }) {
     return SearchState(
       status: status ?? this.status,
@@ -106,6 +111,7 @@ class SearchState extends Equatable {
       hasEndDate: hasEndDate ?? this.hasEndDate,
       getEvents: getEvents ?? this.getEvents,
       errorMessage: errorMessage ?? '',
+      searchRequest: searchRequest ?? this.searchRequest,
     );
   }
 }

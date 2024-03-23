@@ -117,10 +117,10 @@ class SearchCubit extends Cubit<SearchState> {
     );
   }
 
-  void search({required String title, int page = 1}) async {
-    emit(state.copyWith(status: OneStatus.loading));
+  void search({required String query, int page = 1}) async {
+    emit(state.copyWith(status: OneStatus.loading, searchRequest: query));
     final GetEventRequest request = GetEventRequest(
-      request: title,
+      request: query,
       locations: state.selectedLocations,
       categories: state.selectedCategories,
       languages: state.selectedLanguages,
@@ -139,13 +139,8 @@ class SearchCubit extends Cubit<SearchState> {
     );
   }
 
-  void backToInitial() {
-    emit(
-      state.copyWith(
-        status: OneStatus.initial,
-        step: SearchStep.initial,
-      ),
-    );
+  void setStep(SearchStep step) {
+    emit(state.copyWith(step: step));
   }
 
   void clearSearch() {
@@ -164,6 +159,7 @@ class SearchCubit extends Cubit<SearchState> {
         hasStartDate: false,
         hasEndDate: false,
         getEvents: GetEventsItem.empty(),
+        searchRequest: '',
       ),
     );
   }

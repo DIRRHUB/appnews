@@ -33,7 +33,7 @@ class SearchPage extends StatelessWidget {
               searchController: searchController,
               getEvents: state.getEvents,
               onTap: (int page) {
-                bloc.search(title: searchController.text, page: page);
+                bloc.search(query: searchController.text, page: page);
               },
             );
           } else {

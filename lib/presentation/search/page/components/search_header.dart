@@ -34,7 +34,7 @@ class SearchHeader extends StatelessWidget {
                 OneIconButton(
                   icon: Icons.arrow_back,
                   onTap: () {
-                    searchBloc.backToInitial();
+                    searchBloc.setStep(SearchStep.initial);
                   },
                   backgroundColor: theme.colorScheme.surface,
                   height: PaddingConstants.extraImmenseSmall,
@@ -66,11 +66,17 @@ class SearchHeader extends StatelessWidget {
                   labelText: context.loc.search,
                   controller: controller,
                   onChanged: (value) {
-                    if (value.isNotEmpty) {
-                      homeBloc.setStep(HomeStep.search);
+                    if (state.searchRequest != controller.text && state.step == SearchStep.result) {
+                      searchBloc.setStep(SearchStep.initial);
+                    } else if (state.searchRequest == controller.text && state.step == SearchStep.initial) {
+                      searchBloc.setStep(SearchStep.result);
                     } else {
-                      homeBloc.setStep(HomeStep.initial);
-                      searchBloc.clearSearch();
+                      if (value.isNotEmpty) {
+                        homeBloc.setStep(HomeStep.search);
+                      } else {
+                        homeBloc.setStep(HomeStep.initial);
+                        searchBloc.clearSearch();
+                      }
                     }
                   },
                 ),

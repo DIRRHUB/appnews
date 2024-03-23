@@ -26,7 +26,7 @@ class InitialSearchStepPage extends StatelessWidget {
           child: OneButton(
             width: double.infinity,
             onTap: () {
-              bloc.search(title: searchController.text);
+              bloc.search(query: searchController.text);
             },
             text: context.loc.search,
           ),

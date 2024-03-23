@@ -17,62 +17,55 @@ class SmallArticleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Material(
-      color: theme.colorScheme.surface,
-      borderRadius: BorderRadius.circular(BorderRadiusConstants.large),
-      child: InkWell(
-        onTap: () {
-          BlocProvider.of<HomeCubit>(context).selectArticle(article);
-          if (isLarge) {
-            OneDialog.showArticlePage(context, article);
-          }
-        },
-        borderRadius: BorderRadius.circular(BorderRadiusConstants.large),
-        child: OneCard(
-          child: Padding(
-            padding: const EdgeInsets.all(PaddingConstants.medium),
-            child: Column(
+    return OneCard(
+      onTap: () {
+        BlocProvider.of<HomeCubit>(context).selectArticle(article);
+        if (isLarge) {
+          OneDialog.showArticlePage(context, article);
+        }
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(PaddingConstants.medium),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: PaddingConstants.extraImmensePlus,
-                      width: PaddingConstants.extraImmensePlus,
-                      child: OneImage(radius: BorderRadiusConstants.normal, imageLink: article.image),
-                    ),
-                    const SizedBox(width: PaddingConstants.medium),
-                    Expanded(
-                      child: Text(
-                        article.title,
-                        style: theme.textTheme.labelLarge,
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ],
+                SizedBox(
+                  height: PaddingConstants.extraImmensePlus,
+                  width: PaddingConstants.extraImmensePlus,
+                  child: OneImage(radius: BorderRadiusConstants.normal, imageLink: article.image),
                 ),
-                const SizedBox(height: PaddingConstants.medium),
-                Text(
-                  article.body,
-                  style: theme.primaryTextTheme.bodyMedium,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: PaddingConstants.medium),
-                Align(
-                  alignment: Alignment.centerRight,
+                const SizedBox(width: PaddingConstants.medium),
+                Expanded(
                   child: Text(
-                    DateFormat(DateConstants.hhmmdmmmy).format(article.dateTimePublished),
-                    style: theme.primaryTextTheme.labelLarge,
-                    maxLines: 1,
+                    article.title,
+                    style: theme.textTheme.labelLarge,
+                    maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ],
             ),
-          ),
+            const SizedBox(height: PaddingConstants.medium),
+            Text(
+              article.body,
+              style: theme.primaryTextTheme.bodyMedium,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
+            const SizedBox(height: PaddingConstants.medium),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                DateFormat(DateConstants.hhmmdmmmy).format(article.dateTimePublished),
+                style: theme.primaryTextTheme.labelLarge,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
         ),
       ),
     );
