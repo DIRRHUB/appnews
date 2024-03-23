@@ -3,14 +3,16 @@ import 'package:appnews/presentation/home/bloc/home_cubit.dart';
 import 'package:appnews/shared/constants/date_constants.dart';
 import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:appnews/shared/widgets/one_card.dart';
+import 'package:appnews/shared/widgets/one_dialog.dart';
 import 'package:appnews/shared/widgets/one_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 class SmallArticleCard extends StatelessWidget {
-  const SmallArticleCard({super.key, required this.article});
+  const SmallArticleCard({super.key, required this.article, required this.isLarge});
   final ActivityArticleItem article;
+  final bool isLarge;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,9 @@ class SmallArticleCard extends StatelessWidget {
       child: InkWell(
         onTap: () {
           BlocProvider.of<HomeCubit>(context).selectArticle(article);
+          if (isLarge) {
+            OneDialog.showArticlePage(context, article);
+          }
         },
         borderRadius: BorderRadius.circular(BorderRadiusConstants.large),
         child: OneCard(

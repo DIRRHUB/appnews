@@ -82,8 +82,6 @@ linter:
     avoid_field_initializers_in_const_classes: true
     avoid_positional_boolean_parameters: true
     avoid_private_typedef_functions: true
-    avoid_returning_null_for_future: true
-    avoid_setters_without_getters: true
     avoid_type_to_string: true
     avoid_unused_constructor_parameters: true
     cancel_subscriptions: true

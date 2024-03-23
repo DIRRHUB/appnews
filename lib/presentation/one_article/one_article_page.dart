@@ -4,45 +4,49 @@ import 'package:appnews/shared/widgets/one_image.dart';
 import 'package:flutter/material.dart';
 
 class OneArticlePage extends StatelessWidget {
-  const OneArticlePage({super.key, required this.article});
+  const OneArticlePage({super.key, required this.article, this.articleTitle});
   final ActivityArticleItem article;
+  final Widget? articleTitle;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return ListView(
+    return Padding(
       padding: const EdgeInsets.only(
         left: PaddingConstants.extraLarge,
         right: PaddingConstants.extraLarge,
         bottom: PaddingConstants.extraLarge,
         top: PaddingConstants.normal,
       ),
-      children: [
-        if (article.image.isNotEmpty) ...[
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(BorderRadiusConstants.large),
-              border: Border.all(color: theme.colorScheme.surfaceVariant),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (article.image.isNotEmpty) ...[
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(BorderRadiusConstants.large),
+                border: Border.all(color: theme.colorScheme.surfaceVariant),
+              ),
+              width: double.infinity,
+              height: PaddingConstants.extraImmense * 8,
+              child: OneImage(
+                radius: BorderRadiusConstants.large,
+                imageLink: article.image,
+                aspectRatio: 16 / 9,
+              ),
             ),
-            height: PaddingConstants.extraImmense * 8,
-            child: OneImage(
-              radius: BorderRadiusConstants.large,
-              imageLink: article.image,
-              aspectRatio: 16 / 9,
-            ),
+            const SizedBox(height: PaddingConstants.extraLarge),
+          ],
+          if (articleTitle != null) ...[
+            articleTitle!,
+            const SizedBox(height: PaddingConstants.extraImmense),
+          ],
+          Text(
+            article.body,
+            style: theme.textTheme.labelMedium,
           ),
-          const SizedBox(height: PaddingConstants.extraLarge),
         ],
-        Text(
-          article.title,
-          style: theme.textTheme.headlineMedium,
-        ),
-        const SizedBox(height: PaddingConstants.extraImmense),
-        Text(
-          article.body,
-          style: theme.textTheme.labelMedium,
-        ),
-      ],
+      ),
     );
   }
 }

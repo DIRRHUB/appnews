@@ -49,44 +49,36 @@ class _HomePageState extends State<HomePage> {
           builder: (context, state) {
             return AdaptiveSplittedView(
               childMedium: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
                     width: SizeConstants.smallPageBreakpoint,
                     child: Column(
                       children: [
-                        SearchHeader(
-                          controller: searchController,
-                          onChanged: (value) {
-                            if (value.isNotEmpty) {
-                              homeBloc.setStep(HomeStep.search);
-                            } else {
-                              homeBloc.setStep(HomeStep.initial);
-                              searchBloc.backToInitial();
-                            }
-                          },
-                        ),
+                        SearchHeader(controller: searchController),
                         Expanded(child: _buildHomeStep(state.step)),
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: (state.article.isEmpty) ? const SelectArticleCard() : OneArticlePage(article: state.article),
-                  ),
+                  if (state.article.isEmpty)
+                    const Expanded(child: SelectArticleCard())
+                  else
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: OneArticlePage(
+                          article: state.article,
+                          articleTitle: Text(
+                            state.article.title,
+                            style: theme.textTheme.headlineMedium,
+                          ),
+                        ),
+                      ),
+                    ),
                 ],
               ),
               childSmall: Column(
                 children: [
-                  SearchHeader(
-                    controller: searchController,
-                    onChanged: (value) {
-                      if (value.isNotEmpty) {
-                        homeBloc.setStep(HomeStep.search);
-                      } else {
-                        homeBloc.setStep(HomeStep.initial);
-                        searchBloc.backToInitial();
-                      }
-                    },
-                  ),
+                  SearchHeader(controller: searchController),
                   Expanded(child: _buildHomeStep(state.step)),
                 ],
               ),

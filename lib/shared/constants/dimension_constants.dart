@@ -1,4 +1,6 @@
 abstract class DimensionConstants {
+  static const double appBarHeight = 50;
+
   //icons
   static const double iconExtraSmall = 12;
   static const double iconSmall = 14;

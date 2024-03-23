@@ -45,7 +45,6 @@ class InitialArticlesPage extends StatelessWidget {
                 isMultipleChoice: false,
               ),
             ),
-            const SizedBox(height: PaddingConstants.large),
             Expanded(child: _buildActivitiesByType(context, state)),
           ],
         );

@@ -144,7 +144,15 @@ class SearchCubit extends Cubit<SearchState> {
       state.copyWith(
         status: OneStatus.initial,
         step: SearchStep.initial,
-        getEvents: GetEventsItem.empty(),
+      ),
+    );
+  }
+
+  void clearSearch() {
+    emit(
+      state.copyWith(
+        status: OneStatus.initial,
+        step: SearchStep.initial,
         locations: [],
         categories: [],
         languages: [],
@@ -155,6 +163,7 @@ class SearchCubit extends Cubit<SearchState> {
         selectedEndDate: DateTime.now(),
         hasStartDate: false,
         hasEndDate: false,
+        getEvents: GetEventsItem.empty(),
       ),
     );
   }

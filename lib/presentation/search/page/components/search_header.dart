@@ -11,9 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchHeader extends StatelessWidget {
-  const SearchHeader({super.key, required this.onChanged, required this.controller});
+  const SearchHeader({super.key, required this.controller});
   final TextEditingController controller;
-  final Function(String value) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +34,23 @@ class SearchHeader extends StatelessWidget {
                 OneIconButton(
                   icon: Icons.arrow_back,
                   onTap: () {
+                    searchBloc.backToInitial();
+                  },
+                  backgroundColor: theme.colorScheme.surface,
+                  height: PaddingConstants.extraImmenseSmall,
+                  width: PaddingConstants.extraImmenseSmall,
+                  iconSize: DimensionConstants.iconNormal,
+                  borderSide: BorderSide(color: theme.colorScheme.surfaceVariant),
+                  borderRadius: BorderRadius.circular(BorderRadiusConstants.large),
+                ),
+                const SizedBox(width: PaddingConstants.medium),
+              ] else if (state.step == SearchStep.initial && controller.text.isNotEmpty) ...[
+                OneIconButton(
+                  icon: Icons.arrow_back,
+                  onTap: () {
                     controller.clear();
                     homeBloc.setStep(HomeStep.initial);
-                    searchBloc.backToInitial();
+                    searchBloc.clearSearch();
                   },
                   backgroundColor: theme.colorScheme.surface,
                   height: PaddingConstants.extraImmenseSmall,
@@ -52,7 +65,14 @@ class SearchHeader extends StatelessWidget {
                 child: OneTextField(
                   labelText: context.loc.search,
                   controller: controller,
-                  onChanged: onChanged,
+                  onChanged: (value) {
+                    if (value.isNotEmpty) {
+                      homeBloc.setStep(HomeStep.search);
+                    } else {
+                      homeBloc.setStep(HomeStep.initial);
+                      searchBloc.clearSearch();
+                    }
+                  },
                 ),
               ),
             ],
