@@ -68,8 +68,6 @@ class SearchHeader extends StatelessWidget {
                   onChanged: (value) {
                     if (state.searchRequest != controller.text && state.step == SearchStep.result) {
                       searchBloc.setStep(SearchStep.initial);
-                    } else if (state.searchRequest == controller.text && state.step == SearchStep.initial) {
-                      searchBloc.setStep(SearchStep.result);
                     } else {
                       if (value.isNotEmpty) {
                         homeBloc.setStep(HomeStep.search);
