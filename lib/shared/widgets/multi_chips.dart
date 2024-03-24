@@ -58,7 +58,7 @@ class ChipItem<T> extends Equatable {
 
 class MultiChips<T> extends StatelessWidget {
   const MultiChips({
-    Key? key,
+    super.key,
     required this.options,
     this.onChanged,
     this.isMultipleChoice = false,
@@ -73,7 +73,7 @@ class MultiChips<T> extends StatelessWidget {
     this.deleteSpaceWidth,
     this.deleteColorIcon,
     this.isFlexible = false,
-  }) : super(key: key);
+  });
   final List<ChipItem<T>> options;
   final Function(List<T> selectedOptions)? onChanged;
   final bool isMultipleChoice;

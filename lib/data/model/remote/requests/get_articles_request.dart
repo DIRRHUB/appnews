@@ -13,6 +13,8 @@ class GetArticlesRequest {
       '\$filter': {
         'forceMaxDataTimeWindow': '31',
         'isDuplicate': 'skipDuplicates',
+        'startSourceRankPercentile': 50,
+        'endSourceRankPercentile': 100,
       },
     },
     'resultType': 'articles',

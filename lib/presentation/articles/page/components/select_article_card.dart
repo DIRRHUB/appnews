@@ -1,5 +1,5 @@
 import 'package:appnews/core/extensions/localization_extension.dart';
-import 'package:appnews/shared/constants/dimension_constants.dart';
+import 'package:appnews/shared/widgets/one_empty_state.dart';
 import 'package:flutter/material.dart';
 
 class SelectArticleCard extends StatelessWidget {
@@ -12,9 +12,8 @@ class SelectArticleCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.article_rounded),
-          const SizedBox(height: PaddingConstants.extraLarge),
-          Text(context.loc.selectArticle, style: theme.textTheme.bodyLarge),
+          const OneEmptyState(),
+          Text(context.loc.selectArticle, style: theme.textTheme.labelLarge),
         ],
       ),
     );

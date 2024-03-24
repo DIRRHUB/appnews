@@ -19,8 +19,6 @@ class InitialSetup {
     log('setupLoggers: done');
     await _setupStorages(); // Hive, GetIt, LocalStorage
     log('setupStorages: done');
-    await _setupLateInit(); // Captcha, Timezone
-    log('setupLateInit: done');
   }
 
   Future<void> _setupLoggers() async {
@@ -43,6 +41,4 @@ class InitialSetup {
     GoRouter.optionURLReflectsImperativeAPIs = true;
     if (kIsWeb) setPathUrlStrategy();
   }
-
-  Future<void> _setupLateInit() async {}
 }

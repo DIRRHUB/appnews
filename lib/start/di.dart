@@ -45,9 +45,7 @@ Future<void> init() async {
   );
 
   serviceLocator.registerLazySingleton<HomeCubit>(
-    () => HomeCubit(
-      serviceLocator<NewsRemoteRepository>(),
-    ),
+    HomeCubit.new,
   );
 
   serviceLocator.registerLazySingleton<SearchCubit>(

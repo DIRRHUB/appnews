@@ -2,6 +2,7 @@ abstract class DateConstants {
   static const String hhmmdmmmy = 'HH:mm d MMM y';
 
   static const String ddmmyyyy = 'dd/MM/yyyy';
+  static const String ddmmyyyyhhmm = 'dd/MM/yyyy HH:mm';
   static const String hhmm = 'hh:mm';
   static const String hmma = 'h:mm a';
   static const String mmmy = 'MMM yyyy';

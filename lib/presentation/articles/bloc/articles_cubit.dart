@@ -2,7 +2,9 @@ import 'package:appnews/core/base/failure.dart';
 import 'package:appnews/core/enums/home_article_type_enum.dart';
 import 'package:appnews/core/enums/one_status_enum.dart';
 import 'package:appnews/data/model/remote/requests/get_articles_request.dart';
+import 'package:appnews/data/model/remote/requests/stream_of_articles_request.dart';
 import 'package:appnews/domain/entity/get_articles/get_articles_item.dart';
+import 'package:appnews/domain/entity/stream_of_articles/recent_activity_articles_item.dart';
 import 'package:appnews/domain/repositories/remote/news_remote_repository.dart';
 import 'package:appnews/presentation/articles/bloc/articles_state.dart';
 import 'package:bloc/bloc.dart';
@@ -15,7 +17,7 @@ class ArticlesCubit extends Cubit<ArticlesState> {
 
   void getMoreRecentArticles() async {
     emit(state.copyWith(status: OneStatus.initial));
-    /* final Either<Failure, RecentActivityActiclesItem> result =
+    final Either<Failure, RecentActivityActiclesItem> result =
         await _repository.getRecentActivityArticles(StreamOfArticlesRequest());
     result.fold(
       (l) {
@@ -24,7 +26,7 @@ class ArticlesCubit extends Cubit<ArticlesState> {
       (recentActivityActicles) {
         emit(state.copyWith(status: OneStatus.initial, recentActivityActicles: recentActivityActicles));
       },
-    ); */
+    );
   }
 
   void selectType(HomeArticleType type) {

@@ -38,6 +38,7 @@ class GetEventRequest {
     'resultType': 'events',
     'eventsSortBy': 'date',
     'includeConceptImage': true,
+    'includeEventConcepts': false,
     'eventImageCount': 1,
     'storyImageCount': 1,
     'eventsPage': page,

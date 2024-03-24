@@ -1,7 +1,9 @@
 import 'package:appnews/domain/entity/stream_of_articles/activity_article_item.dart';
+import 'package:appnews/shared/constants/date_constants.dart';
 import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:appnews/shared/widgets/one_image.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class OneArticlePage extends StatelessWidget {
   const OneArticlePage({super.key, required this.article, this.articleTitle});
@@ -43,7 +45,12 @@ class OneArticlePage extends StatelessWidget {
           ],
           Text(
             article.body,
-            style: theme.textTheme.labelMedium,
+            style: theme.primaryTextTheme.bodyLarge,
+          ),
+          const SizedBox(height: PaddingConstants.extraImmense),
+          Text(
+            DateFormat(DateConstants.ddmmyyyyhhmm).format(article.dateTimePublished),
+            style: theme.primaryTextTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurface),
           ),
         ],
       ),

@@ -59,7 +59,7 @@ class OneTextField extends StatefulWidget {
   final Function()? onTap;
 
   const OneTextField({
-    Key? key,
+    super.key,
     required this.controller,
     this.focusNode,
     this.inputFormatters,
@@ -108,7 +108,7 @@ class OneTextField extends StatefulWidget {
     this.hoverColor,
     this.isCollapsed,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   State createState() => _OneTextFieldState();

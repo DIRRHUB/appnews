@@ -43,7 +43,6 @@ class _OneCardState extends State<OneCard> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     if (widget.onTap == null) {
       return Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(widget.radius)),

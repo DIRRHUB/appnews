@@ -5,5 +5,5 @@ class GlobalConstants {
   static late GlobalKey<NavigatorState> navState;
 
   static const String baseUrl = 'https://newsapi.ai/api/v1/';
-  static const String newsApiKey = '60d8b3fa-cd1f-4653-b5f6-797af7148a0e';
+  static const String newsApiKey = '0857af98-7a02-4050-adcf-cd058738097c';
 }
