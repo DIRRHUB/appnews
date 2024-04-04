@@ -18,6 +18,9 @@ class SmallArticleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return OneCard(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(BorderRadiusConstants.normal),
+      ),
       onTap: () {
         BlocProvider.of<HomeCubit>(context).selectArticle(article);
         if (isLarge) {
