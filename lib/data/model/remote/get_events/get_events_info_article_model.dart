@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part '../../../../generated/data/model/remote/get_events/get_events_info_article_model.freezed.dart';
 part '../../../../generated/data/model/remote/get_events/get_events_info_article_model.g.dart';
 
+/// The model class for the get events info article response
 @freezed
 class GetEventsInfoArticleModel with _$GetEventsInfoArticleModel {
   factory GetEventsInfoArticleModel({

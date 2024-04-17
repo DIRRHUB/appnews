@@ -1,3 +1,5 @@
+/// This file contains all the dimension constants used in the app.
+/// The dimensions are used to set the padding, margin, height, width, etc of the widgets
 abstract class DimensionConstants {
   static const double appBarHeight = 50;
 

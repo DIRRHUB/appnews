@@ -16,6 +16,8 @@ import 'package:appnews/start/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// HomePage is a widget which control the state of the home page
+/// It will display the search page or the initial articles page based on the state
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 

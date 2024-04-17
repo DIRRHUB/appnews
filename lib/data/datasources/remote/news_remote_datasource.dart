@@ -10,6 +10,9 @@ import 'package:retrofit/retrofit.dart';
 
 part '../../../generated/data/datasources/remote/news_remote_datasource.g.dart';
 
+/// Datasource class for getting news data from remote server
+/// It uses Retrofit library to optimize code and uses code generation
+///
 @RestApi(baseUrl: GlobalConstants.baseUrl)
 abstract class NewsRemoteDatasource {
   factory NewsRemoteDatasource(Dio dio, {String baseUrl}) = _NewsRemoteDatasource;

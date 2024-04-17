@@ -12,6 +12,7 @@ import 'package:get_it/get_it.dart';
 
 final GetIt serviceLocator = GetIt.instance;
 
+/// Initialize the dependency injection
 Future<void> init() async {
   serviceLocator.registerLazySingleton<MainRouter>(
     MainRouter.new,

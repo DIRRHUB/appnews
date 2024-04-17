@@ -2,6 +2,9 @@ import 'package:appnews/core/enums/server_code_enum.dart';
 import 'package:appnews/data/model/remote/other/message_error_model.dart';
 import 'package:equatable/equatable.dart';
 
+/// Failure is a contract class for handling errors/failures.
+/// Every feature specific failure should extend [Failure] class.
+/// Failure types: ServerFailure, UndefinedFailure, UnimplementedFailure
 abstract class Failure extends Equatable {
   final String message;
   const Failure({

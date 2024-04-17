@@ -2,6 +2,9 @@ import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:appnews/shared/widgets/one_scroll_behavior.dart';
 import 'package:flutter/material.dart';
 
+/// PaginationList is a widget for displaying pagination list.
+/// The selected page will be highlighted.
+/// The onTap function will be called when a page is tapped.
 class PaginationList extends StatelessWidget {
   const PaginationList({super.key, required this.selectedPage, required this.pages, required this.onTap});
   final int pages;

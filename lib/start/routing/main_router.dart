@@ -5,6 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+/// The main router for the app
+/// It will handle all the routing in the app
 class MainRouter {
   late GoRouter router = GoRouter(
     debugLogDiagnostics: kDebugMode,

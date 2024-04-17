@@ -6,6 +6,7 @@ import 'package:appnews/domain/entity/suggest_languages/suggest_language_item.da
 import 'package:appnews/domain/entity/suggest_locations/suggest_location_item.dart';
 import 'package:equatable/equatable.dart';
 
+/// State class for the Search Cubit
 class SearchState extends Equatable {
   const SearchState({
     required this.status,

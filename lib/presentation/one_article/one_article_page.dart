@@ -5,6 +5,7 @@ import 'package:appnews/shared/widgets/one_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+/// The page for one article
 class OneArticlePage extends StatelessWidget {
   const OneArticlePage({super.key, required this.article, this.articleTitle});
   final ActivityArticleItem article;

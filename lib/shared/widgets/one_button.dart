@@ -2,6 +2,7 @@ import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:appnews/shared/constants/size_constants.dart';
 import 'package:flutter/material.dart';
 
+/// Custom button widget
 class OneButton extends StatelessWidget {
   const OneButton({
     super.key,

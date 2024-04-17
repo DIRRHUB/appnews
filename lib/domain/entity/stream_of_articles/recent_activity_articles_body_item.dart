@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '../../../generated/domain/entity/stream_of_articles/recent_activity_articles_body_item.freezed.dart';
 
+/// The entity class for the recent activity articles body item
 @freezed
 class RecentActivityActiclesBodyItem with _$RecentActivityActiclesBodyItem {
   factory RecentActivityActiclesBodyItem({

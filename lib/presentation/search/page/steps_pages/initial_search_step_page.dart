@@ -6,6 +6,7 @@ import 'package:appnews/shared/widgets/one_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// The initial search step page
 class InitialSearchStepPage extends StatelessWidget {
   const InitialSearchStepPage({super.key, required this.searchController});
   final TextEditingController searchController;

@@ -1,6 +1,9 @@
 import 'package:loggy/loggy.dart' as loggy;
 import 'package:stack_trace/stack_trace.dart';
 
+/// Loggy is a logger package that provides a simple way to log messages.
+/// It is used to log messages in the application.
+/// The log messages are categorized into 4 types: debug, info, warning, and error.
 void debug(dynamic message, {Object? classType}) {
   final type = classType ?? getFileName();
   loggy.logDebug('$type | $message');
@@ -34,9 +37,6 @@ void error(dynamic message, {Object? classType}) {
 */
 String getFileName() {
   try {
-    // var frames = StackTrace.current.toString();
-    // final framesParsed = Frame.parseVM(frames);
-    // final tag = framesParsed.tag;
     final currentChains = Chain.current(3);
     Frame? coreChain = currentChains.traces.first.frames.first;
     for (final c in currentChains.traces) {

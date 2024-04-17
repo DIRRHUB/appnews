@@ -1,3 +1,6 @@
+/// Date constants class
+/// This class contains date formats used in the app
+/// The formats are used to format the date in the app
 abstract class DateConstants {
   static const String hhmmdmmmy = 'HH:mm d MMM y';
 

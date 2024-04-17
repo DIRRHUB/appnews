@@ -1,7 +1,10 @@
-class MainRouteName {
+/// Basic route names for the main route
+library;
+
+abstract class MainRouteName {
   static const String home = 'home';
 }
 
-class MainRoutePath {
+abstract class MainRoutePath {
   static const String home = '/home';
 }

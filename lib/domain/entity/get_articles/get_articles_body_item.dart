@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '../../../generated/domain/entity/get_articles/get_articles_body_item.freezed.dart';
 
+/// The entity class for the get articles body item
 @freezed
 class GetArticlesBodyItem with _$GetArticlesBodyItem {
   factory GetArticlesBodyItem({

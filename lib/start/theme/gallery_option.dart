@@ -1,31 +1,24 @@
 import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:appnews/start/theme/color_scheme.g.dart';
-import 'package:appnews/start/theme/font_styles.dart';
 import 'package:flutter/material.dart';
 
 class GalleryOptionTheme {
   static const _lightFillColor = Colors.black;
   static const _darkFillColor = Colors.white;
+  static const String fontFamily = 'Unbounded';
 
   static ThemeData lightThemeData = themeData(darkColorScheme);
   static ThemeData darkThemeData = themeData(darkColorScheme);
 
+  /// The theme data for the app
+  /// [colorScheme] is the color scheme for the app
+  /// [fontFamily] is the font family for the app
   static ThemeData themeData(ColorScheme colorScheme) {
     return ThemeData(
       useMaterial3: true,
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: colorScheme.background,
       ),
-      extensions: const [
-        /*  ColorsExtension(
-          semantic1: Color(0xFFDD2D3A),
-          semantic2: Color(0xFFFC9E11),
-          semantic3: Color(0xffffcc00),
-          semantic4: Color(0xFF3B8334),
-          semantic5: Color(0xFF2F80ED),
-          semantic6: Color(0xFF6B9FED),
-        ), */
-      ],
       //TextTheme fonts based on the design. Use textTheme or primaryTextTheme depending on the font size which you need
       //600 - semibold, 300-light, 500-medium, 400-regular
       textTheme: TextTheme(
@@ -63,7 +56,7 @@ class GalleryOptionTheme {
         titleLarge: TextStyle(fontSize: 10, fontWeight: FontWeight.w500, color: colorScheme.onPrimary),
       ),
       focusColor: colorScheme.primary,
-      fontFamily: FontStyles.fontFamily,
+      fontFamily: fontFamily,
       primaryColor: colorScheme.primary,
       cardColor: colorScheme.surface,
       appBarTheme: AppBarTheme(
@@ -142,13 +135,13 @@ class GalleryOptionTheme {
           fontSize: 10,
           fontWeight: FontWeight.w400,
           color: colorScheme.primary,
-          fontFamily: FontStyles.fontFamily,
+          fontFamily: fontFamily,
         ),
         selectedLabelStyle: TextStyle(
           fontSize: 11,
           fontWeight: FontWeight.w500,
           color: colorScheme.onPrimary,
-          fontFamily: FontStyles.fontFamily,
+          fontFamily: fontFamily,
         ),
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: true,
@@ -164,7 +157,7 @@ class GalleryOptionTheme {
           fontSize: 14,
           fontWeight: FontWeight.w500,
           color: colorScheme.onSurface,
-          fontFamily: FontStyles.fontFamily,
+          fontFamily: fontFamily,
         ),
         unselectedIconTheme: IconThemeData(
           color: colorScheme.onSurface,
@@ -178,7 +171,7 @@ class GalleryOptionTheme {
           fontSize: 14,
           fontWeight: FontWeight.w500,
           color: colorScheme.onPrimary,
-          fontFamily: FontStyles.fontFamily,
+          fontFamily: fontFamily,
         ),
         useIndicator: true,
         indicatorShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(BorderRadiusConstants.medium)),

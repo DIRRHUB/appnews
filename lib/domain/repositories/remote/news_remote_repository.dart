@@ -18,6 +18,8 @@ import 'package:appnews/domain/entity/suggest_categories/suggest_category_item.d
 import 'package:appnews/domain/entity/suggest_locations/suggest_location_item.dart';
 import 'package:dartz/dartz.dart';
 
+/// The remote repository class
+/// It is used to get the data from the remote data source and format it to the entity class
 class NewsRemoteRepository {
   final NewsRemoteDatasource _datasource;
 

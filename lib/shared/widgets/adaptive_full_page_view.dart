@@ -5,6 +5,8 @@ import 'package:appnews/shared/widgets/one_close_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 
+/// A page that shows a full screen dialog.
+/// This page is adaptive and will show a full screen dialog on mobile and a dialog with a max width on web.
 class AdaptiveFullDialogPage<T> extends Page<T> {
   /// Creates a material page.
   const AdaptiveFullDialogPage({

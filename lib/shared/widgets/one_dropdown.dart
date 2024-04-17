@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 
+/// Custom widget for a single dropdown
 class OneDropdown<T> extends StatefulWidget {
   const OneDropdown({
     super.key,

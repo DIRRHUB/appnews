@@ -2,6 +2,7 @@ import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:appnews/shared/widgets/one_icon_button.dart';
 import 'package:flutter/material.dart';
 
+/// A close button with a close icon.
 class OneCloseButton extends StatelessWidget {
   const OneCloseButton({super.key, required this.onTap, this.backgroundColor, this.isCircle = true});
   final Function() onTap;

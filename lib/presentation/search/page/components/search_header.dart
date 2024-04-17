@@ -10,6 +10,7 @@ import 'package:appnews/shared/widgets/one_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// The widget for the search bar
 class SearchHeader extends StatelessWidget {
   const SearchHeader({super.key, required this.controller});
   final TextEditingController controller;

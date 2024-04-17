@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '../../../generated/domain/entity/stream_of_articles/activity_article_item.freezed.dart';
 
+/// The entity class for the activity article item
 @freezed
 class ActivityArticleItem with _$ActivityArticleItem {
   factory ActivityArticleItem({

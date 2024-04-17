@@ -56,6 +56,7 @@ class ChipItem<T> extends Equatable {
       ];
 }
 
+/// Custom widget for multiple chips
 class MultiChips<T> extends StatelessWidget {
   const MultiChips({
     super.key,

@@ -2,6 +2,7 @@ import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:gif/gif.dart';
 
+/// OneLoading is a widget to display loading animation
 class OneLoading extends StatefulWidget {
   const OneLoading({super.key});
 

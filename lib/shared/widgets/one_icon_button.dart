@@ -1,6 +1,7 @@
 import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:flutter/material.dart';
 
+/// Custom button with an icon.
 class OneIconButton extends StatelessWidget {
   const OneIconButton({
     super.key,

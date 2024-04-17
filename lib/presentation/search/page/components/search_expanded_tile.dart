@@ -2,6 +2,7 @@ import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_expanded_tile/flutter_expanded_tile.dart';
 
+/// Widget for search expanded tile in the search page
 class SearchExpandedTile extends StatefulWidget {
   const SearchExpandedTile({super.key, required this.child, required this.title});
   final String title;

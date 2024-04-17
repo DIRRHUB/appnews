@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '../../../generated/domain/entity/suggest_locations/suggest_location_label_item.freezed.dart';
 
+/// The entity class for the suggest location label item
 @freezed
 class SuggestLocationLabelItem with _$SuggestLocationLabelItem {
   factory SuggestLocationLabelItem({

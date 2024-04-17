@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:loggy/loggy.dart';
 import 'package:url_strategy/url_strategy.dart';
 
+/// InitialSetup is a class for start up app initialization.
 class InitialSetup {
   InitialSetup._privateConstructor();
 

@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part '../../../../generated/data/model/remote/other/message_error_model.freezed.dart';
 part '../../../../generated/data/model/remote/other/message_error_model.g.dart';
 
+/// The model class for the message error response
 @freezed
 class MessageErrorModel with _$MessageErrorModel {
   factory MessageErrorModel({

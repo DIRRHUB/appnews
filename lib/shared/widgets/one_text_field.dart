@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 typedef ValidationChecker = String? Function(String?);
 typedef TypingChecker = bool Function();
 
+/// OneTextField is a widget to display a text field
 class OneTextField extends StatefulWidget {
   final TextEditingController controller;
   final FocusNode? focusNode;

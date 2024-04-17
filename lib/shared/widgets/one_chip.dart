@@ -3,6 +3,7 @@
 import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:flutter/material.dart';
 
+/// Custom widget for a single chip
 class OneChip extends StatelessWidget {
   const OneChip({
     super.key,

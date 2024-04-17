@@ -2,6 +2,7 @@ import 'package:appnews/shared/constants/size_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 
+/// A widget that shows different content based on the screen size.
 class AdaptiveSplittedView extends StatelessWidget {
   const AdaptiveSplittedView({
     super.key,

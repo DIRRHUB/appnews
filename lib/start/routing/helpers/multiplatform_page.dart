@@ -2,7 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-/// User authentication protection moved to [MainRouterInformationParser] as required by Navigation_2.0
+/// MultiplatformPage is a class to create a page that can be used in both web and mobile.
+/// It will return a MaterialPage for mobile and NoAnimationPage for web.
 class MultiplatformPage {
   static Page create({
     required Widget child,

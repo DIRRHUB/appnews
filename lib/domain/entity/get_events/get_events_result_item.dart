@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '../../../generated/domain/entity/get_events/get_events_result_item.freezed.dart';
 
+/// The entity class for the get events result item
 @freezed
 class GetEventsResultItem with _$GetEventsResultItem {
   factory GetEventsResultItem({

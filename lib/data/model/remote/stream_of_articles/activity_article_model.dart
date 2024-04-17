@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part '../../../../generated/data/model/remote/stream_of_articles/activity_article_model.freezed.dart';
 part '../../../../generated/data/model/remote/stream_of_articles/activity_article_model.g.dart';
 
+/// The model class for the activity article
 @freezed
 class ActivityArticleModel with _$ActivityArticleModel {
   factory ActivityArticleModel({

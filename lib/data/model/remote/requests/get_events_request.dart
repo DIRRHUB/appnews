@@ -5,6 +5,7 @@ import 'package:appnews/domain/entity/suggest_categories/suggest_category_item.d
 import 'package:appnews/domain/entity/suggest_languages/suggest_language_item.dart';
 import 'package:appnews/domain/entity/suggest_locations/suggest_location_item.dart';
 
+/// The model class for the get event request
 class GetEventRequest {
   final String request;
   final List<SuggestLocationItem> locations;

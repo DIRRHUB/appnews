@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:oktoast/oktoast.dart';
 
+/// Base class for the app
+/// It will create the app with the router and the theme
 class OneApp extends StatelessWidget {
   OneApp({super.key});
   final router = serviceLocator<MainRouter>().router;

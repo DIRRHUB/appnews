@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
+/// SmallArticleCard is a widget that displays a small article card with an image, title, body, and date
 class SmallArticleCard extends StatelessWidget {
   const SmallArticleCard({super.key, required this.article, required this.isLarge});
   final ActivityArticleItem article;

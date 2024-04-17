@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// GlobalConstants is a class for handling global constants.
 class GlobalConstants {
-  /// Now we initialize this variable from GoRouter plugin during init function
   static late GlobalKey<NavigatorState> navState;
 
   static const String baseUrl = 'https://newsapi.ai/api/v1/';

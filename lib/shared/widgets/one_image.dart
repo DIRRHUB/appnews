@@ -2,6 +2,7 @@ import 'package:appnews/shared/widgets/one_shimmer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+/// Custom image widget with a network image or a local image.
 class OneImage extends StatelessWidget {
   const OneImage({
     this.imageLink,

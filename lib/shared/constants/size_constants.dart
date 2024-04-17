@@ -1,3 +1,4 @@
+/// This class contains all the size constants used in the application.
 abstract class SizeConstants {
   static const double largePageBreakpoint = 1800;
   static const double mediumPageBreakpoint = 900;

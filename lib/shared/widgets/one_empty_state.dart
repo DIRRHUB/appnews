@@ -2,6 +2,7 @@ import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:gif/gif.dart';
 
+/// Custom empty state widget with a gif.
 class OneEmptyState extends StatefulWidget {
   const OneEmptyState({super.key});
 

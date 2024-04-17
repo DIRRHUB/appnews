@@ -7,6 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part '../../../../generated/data/model/remote/get_articles/get_articles_body_model.freezed.dart';
 part '../../../../generated/data/model/remote/get_articles/get_articles_body_model.g.dart';
 
+/// The model class for the body of the get articles response
 @freezed
 class GetArticlesBodyModel with _$GetArticlesBodyModel {
   factory GetArticlesBodyModel({

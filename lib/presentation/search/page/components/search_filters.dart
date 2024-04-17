@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
+/// The widget for search filters
 class SearchFilters extends StatefulWidget {
   const SearchFilters({super.key});
 

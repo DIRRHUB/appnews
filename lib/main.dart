@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+/// Main function to initialize and run the app
 Future<void> main() async {
   await runZoned(() async {
     LicenseRegistry.addLicense(() async* {

@@ -5,6 +5,9 @@ import 'package:appnews/data/model/remote/other/message_error_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
+/// repository helper is a class for handling repository related operations.
+/// It is used to simplify execute the operation and return the result.
+/// The result is wrapped in Either<Failure, T> where T is the result of the operation.
 Future<Either<Failure, T>> execute<T>(Future<T> Function() operation) async {
   try {
     final result = await operation();

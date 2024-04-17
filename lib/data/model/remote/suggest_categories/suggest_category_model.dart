@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part '../../../../generated/data/model/remote/suggest_categories/suggest_category_model.freezed.dart';
 part '../../../../generated/data/model/remote/suggest_categories/suggest_category_model.g.dart';
 
+/// The model class for the suggest category
 @freezed
 class SuggestCategoryModel with _$SuggestCategoryModel {
   factory SuggestCategoryModel({

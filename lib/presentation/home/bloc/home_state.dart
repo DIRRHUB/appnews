@@ -2,6 +2,7 @@ import 'package:appnews/core/enums/home_step_enum.dart';
 import 'package:appnews/domain/entity/stream_of_articles/activity_article_item.dart';
 import 'package:equatable/equatable.dart';
 
+/// The state class for the Home State
 class HomeState extends Equatable {
   const HomeState({
     required this.article,

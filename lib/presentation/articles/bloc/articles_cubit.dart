@@ -10,10 +10,29 @@ import 'package:appnews/presentation/articles/bloc/articles_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 
+/// The cubit class for the Articles Page
+/// It is used to manage the state of the articles page
 class ArticlesCubit extends Cubit<ArticlesState> {
   final NewsRemoteRepository _repository;
 
   ArticlesCubit(this._repository) : super(ArticlesState.initial());
+
+  /// Change the type of the articles
+  /// It will get the articles based on the type
+  /// [type] is the type of the articles
+  /// [HomeArticleType.recent] for the recent articles
+  /// [HomeArticleType.popular] for the popular articles
+  void selectType(HomeArticleType type) {
+    emit(state.copyWith(type: type));
+    switch (type) {
+      case HomeArticleType.recent:
+        getMoreRecentArticles();
+        break;
+      case HomeArticleType.popular:
+        getMorePopularArticles(1);
+        break;
+    }
+  }
 
   void getMoreRecentArticles() async {
     emit(state.copyWith(status: OneStatus.initial));
@@ -27,18 +46,6 @@ class ArticlesCubit extends Cubit<ArticlesState> {
         emit(state.copyWith(status: OneStatus.initial, recentActivityActicles: recentActivityActicles));
       },
     );
-  }
-
-  void selectType(HomeArticleType type) {
-    emit(state.copyWith(type: type));
-    switch (type) {
-      case HomeArticleType.recent:
-        getMoreRecentArticles();
-        break;
-      case HomeArticleType.popular:
-        getMorePopularArticles(1);
-        break;
-    }
   }
 
   void getMorePopularArticles(int page) async {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Custom widget for Card with animation
 class OneCard extends StatefulWidget {
   const OneCard({
     super.key,

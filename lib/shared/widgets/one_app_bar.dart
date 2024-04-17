@@ -2,6 +2,7 @@ import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+/// A widget that shows an app bar for mobile view.
 class OneAppBar extends StatelessWidget implements PreferredSizeWidget {
   const OneAppBar({
     super.key,

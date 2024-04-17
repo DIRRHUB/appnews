@@ -2,6 +2,7 @@ import 'package:appnews/shared/constants/dimension_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
+/// OneShimmer is a widget to display shimmer animation
 class OneShimmer extends StatelessWidget {
   const OneShimmer({super.key});
 

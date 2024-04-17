@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '../../../generated/domain/entity/suggest_categories/suggest_category_item.freezed.dart';
 
+/// The entity class for the suggest category item
 @freezed
 class SuggestCategoryItem with _$SuggestCategoryItem {
   factory SuggestCategoryItem({

@@ -15,11 +15,13 @@ import 'package:appnews/presentation/search/bloc/search_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 
+/// The cubit class for the Search Page
 class SearchCubit extends Cubit<SearchState> {
   final NewsRemoteRepository _repository;
 
   SearchCubit(this._repository) : super(SearchState.initial());
 
+  /// Update the selected location
   void updateLocationSelection(SuggestLocationItem location) {
     final List<SuggestLocationItem> selectedLocations = List.of(state.selectedLocations);
     if (selectedLocations.contains(location)) {
@@ -30,6 +32,7 @@ class SearchCubit extends Cubit<SearchState> {
     emit(state.copyWith(selectedLocations: selectedLocations));
   }
 
+  /// Update the selected category
   void updateCategorySelection(SuggestCategoryItem category) {
     final List<SuggestCategoryItem> selectedCategories = List.of(state.selectedCategories);
     if (selectedCategories.contains(category)) {
@@ -40,6 +43,7 @@ class SearchCubit extends Cubit<SearchState> {
     emit(state.copyWith(selectedCategories: selectedCategories));
   }
 
+  /// Update the selected language
   void updateLanguageSelection(SuggestLanguageItem language) {
     final List<SuggestLanguageItem> selectedLanguages = List.of(state.selectedLanguages);
     if (selectedLanguages.contains(language)) {
@@ -50,6 +54,7 @@ class SearchCubit extends Cubit<SearchState> {
     emit(state.copyWith(selectedLanguages: selectedLanguages));
   }
 
+  /// Search for the location
   void searchLocation(String value) async {
     if (value.isEmpty) {
       emit(state.copyWith(locations: []));
@@ -67,6 +72,7 @@ class SearchCubit extends Cubit<SearchState> {
     );
   }
 
+  /// Search for the category
   void searchCategory(String value) async {
     if (value.isEmpty) {
       emit(state.copyWith(categories: []));
@@ -84,6 +90,7 @@ class SearchCubit extends Cubit<SearchState> {
     );
   }
 
+  /// Search for the language
   void searchLanguage(String value) async {
     if (value.isEmpty) {
       emit(state.copyWith(languages: []));
@@ -98,14 +105,17 @@ class SearchCubit extends Cubit<SearchState> {
     emit(state.copyWith(languages: matchingItems));
   }
 
+  //// Select the start date
   void selectStartDate(DateTime date) {
     emit(state.copyWith(selectedStartDate: date, hasStartDate: true));
   }
 
+  /// Select the end date
   void selectEndDate(DateTime date) {
     emit(state.copyWith(selectedEndDate: date, hasEndDate: true));
   }
 
+  /// Clear the selected dates
   void clearDates() {
     emit(
       state.copyWith(
@@ -117,6 +127,7 @@ class SearchCubit extends Cubit<SearchState> {
     );
   }
 
+  /// Search for the events with the given query and filters
   void search({required String query, int page = 1}) async {
     emit(state.copyWith(status: OneStatus.loading, searchRequest: query));
     final GetEventRequest request = GetEventRequest(
@@ -139,10 +150,12 @@ class SearchCubit extends Cubit<SearchState> {
     );
   }
 
+  /// Change the step of the search page
   void setStep(SearchStep step) {
     emit(state.copyWith(step: step));
   }
 
+  /// Clear the search
   void clearSearch() {
     emit(
       state.copyWith(

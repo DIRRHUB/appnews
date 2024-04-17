@@ -7,6 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part '../../../../generated/data/model/remote/stream_of_articles/recent_activity_articles_model.freezed.dart';
 part '../../../../generated/data/model/remote/stream_of_articles/recent_activity_articles_model.g.dart';
 
+/// The model class for the recent activity articles
 @freezed
 class RecentActivityActiclesModel with _$RecentActivityActiclesModel {
   factory RecentActivityActiclesModel({

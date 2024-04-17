@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// ColorScheme is a class for handling color scheme.
+/// It is used to define the color scheme of the app.
 const darkColorScheme = ColorScheme(
   brightness: Brightness.dark,
   //Primary color

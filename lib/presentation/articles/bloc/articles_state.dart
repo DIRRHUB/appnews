@@ -4,6 +4,7 @@ import 'package:appnews/domain/entity/get_articles/get_articles_item.dart';
 import 'package:appnews/domain/entity/stream_of_articles/recent_activity_articles_item.dart';
 import 'package:equatable/equatable.dart';
 
+/// State class for the Articles Cubit
 class ArticlesState extends Equatable {
   const ArticlesState({
     required this.status,

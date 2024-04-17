@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+/// OneMonthCalendar is a widget to display a calendar for one month
 class OneMonthCalendar<T> extends StatelessWidget {
   const OneMonthCalendar({
     super.key,

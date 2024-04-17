@@ -9,6 +9,8 @@ import 'package:appnews/shared/widgets/one_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// The page for the search
+/// It will show the initial search step or the result search step
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key, required this.searchController});
   final TextEditingController searchController;

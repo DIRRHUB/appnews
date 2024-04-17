@@ -6,6 +6,9 @@ import 'package:appnews/shared/widgets/one_close_button.dart';
 import 'package:flutter/material.dart';
 import 'package:oktoast/oktoast.dart';
 
+/// GlobalMessageService is a class for showing messages
+/// It is used to show messages (toasts) in the app
+///
 abstract class GlobalMessageService {
   static void show({MessageType type = MessageType.error, String? value, Color? color}) {
     final BuildContext? context = GlobalConstants.navState.currentContext;

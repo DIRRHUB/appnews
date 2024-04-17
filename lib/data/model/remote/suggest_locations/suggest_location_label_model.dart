@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part '../../../../generated/data/model/remote/suggest_locations/suggest_location_label_model.freezed.dart';
 part '../../../../generated/data/model/remote/suggest_locations/suggest_location_label_model.g.dart';
 
+/// The model class for the suggest location label
 @freezed
 class SuggestLocationLabelModel with _$SuggestLocationLabelModel {
   factory SuggestLocationLabelModel({

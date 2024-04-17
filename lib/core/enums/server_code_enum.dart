@@ -1,3 +1,4 @@
+/// The enum is used to define the server code
 enum ServerCode {
   success(200),
   informationNotAvailable(204),

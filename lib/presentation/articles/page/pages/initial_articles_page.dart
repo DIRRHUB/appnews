@@ -8,6 +8,7 @@ import 'package:appnews/shared/widgets/multi_chips.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// InitialArticlesPage is a widget that displays the initial articles page state
 class InitialArticlesPage extends StatelessWidget {
   const InitialArticlesPage({super.key});
 

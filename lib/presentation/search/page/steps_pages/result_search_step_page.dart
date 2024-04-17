@@ -5,6 +5,7 @@ import 'package:appnews/presentation/articles/page/components/pagination_list.da
 import 'package:appnews/shared/widgets/one_empty_state.dart';
 import 'package:flutter/material.dart';
 
+/// The page for the search result
 class ResultSearchStepPage extends StatelessWidget {
   const ResultSearchStepPage({super.key, required this.onTap, required this.getEvents, required this.searchController});
   final TextEditingController searchController;

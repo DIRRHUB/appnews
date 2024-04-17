@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// ArticlesList is a widget that displays a list of provided articles
 class ArticlesList extends StatelessWidget {
   const ArticlesList({super.key, required this.articles, this.pagination});
   final List<ActivityArticleItem> articles;

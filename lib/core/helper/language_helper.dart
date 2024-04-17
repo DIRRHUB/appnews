@@ -1,5 +1,6 @@
 import 'package:appnews/domain/entity/suggest_languages/suggest_language_item.dart';
 
+/// LanguageHelper is a class for storing const list of languages.
 abstract class LanguageHelper {
   static final List<SuggestLanguageItem> languages = [
     SuggestLanguageItem(label: 'English', code: 'eng'),
