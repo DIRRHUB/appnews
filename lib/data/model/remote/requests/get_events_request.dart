@@ -49,10 +49,8 @@ class GetEventRequest {
 
   Map? getRequest() {
     return {
-      '\$or': [
-        {'keyword': request, 'keywordLoc': 'title'},
-        {'keyword': request, 'keywordLoc': 'body'},
-      ],
+      'keyword': request,
+      'keywordSearchMode': 'simple',
     };
   }
 
