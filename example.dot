@@ -1,0 +1,762 @@
+digraph "" {
+  graph [style=rounded fontname="Arial Black" fontsize=13 penwidth=2.6];
+  node [shape=rect style="filled,rounded" fontname=Arial fontsize=15 fillcolor=Lavender penwidth=1.3];
+  edge [penwidth=1.3];
+  "/lib/core/base/failure.dart" [label="failure"];
+  "/lib/core/enums/display_type_enum.dart" [label="display_type_enum"];
+  "/lib/core/enums/home_article_type_enum.dart" [label="home_article_type_enum"];
+  "/lib/core/enums/home_step_enum.dart" [label="home_step_enum"];
+  "/lib/core/enums/message_type_enum.dart" [label="message_type_enum"];
+  "/lib/core/enums/one_status_enum.dart" [label="one_status_enum"];
+  "/lib/core/enums/search_step_enum.dart" [label="search_step_enum"];
+  "/lib/core/enums/server_code_enum.dart" [label="server_code_enum"];
+  "/lib/core/extensions/datetime_extension.dart" [label="datetime_extension"];
+  "/lib/core/extensions/localization_extension.dart" [label="localization_extension"];
+  "/lib/core/helper/global_constants.dart" [label="global_constants"];
+  "/lib/core/helper/language_helper.dart" [label="language_helper"];
+  "/lib/core/helper/layout_helper.dart" [label="layout_helper"];
+  "/lib/core/helper/log_helper.dart" [label="log_helper"];
+  "/lib/core/helper/repository_helper.dart" [label="repository_helper"];
+  "/lib/core/helper/serializable_interface.dart" [label="serializable_interface"];
+  "/lib/core/services/global_message_service.dart" [label="global_message_service"];
+  "/lib/core/services/regex_service.dart" [label="regex_service"];
+  "/lib/data/datasources/remote/news_remote_datasource.dart" [label="news_remote_datasource"];
+  "/lib/data/model/remote/get_articles/get_articles_body_model.dart" [label="get_articles_body_model"];
+  "/lib/data/model/remote/get_articles/get_articles_model.dart" [label="get_articles_model"];
+  "/lib/data/model/remote/get_events/get_events_body_model.dart" [label="get_events_body_model"];
+  "/lib/data/model/remote/get_events/get_events_info_article_model.dart" [label="get_events_info_article_model"];
+  "/lib/data/model/remote/get_events/get_events_model.dart" [label="get_events_model"];
+  "/lib/data/model/remote/get_events/get_events_result_model.dart" [label="get_events_result_model"];
+  "/lib/data/model/remote/other/message_error_model.dart" [label="message_error_model"];
+  "/lib/data/model/remote/requests/get_articles_request.dart" [label="get_articles_request"];
+  "/lib/data/model/remote/requests/get_events_request.dart" [label="get_events_request"];
+  "/lib/data/model/remote/requests/stream_of_articles_request.dart" [label="stream_of_articles_request"];
+  "/lib/data/model/remote/requests/suggest_categories_request.dart" [label="suggest_categories_request"];
+  "/lib/data/model/remote/requests/suggest_locations_request.dart" [label="suggest_locations_request"];
+  "/lib/data/model/remote/stream_of_articles/activity_article_model.dart" [label="activity_article_model"];
+  "/lib/data/model/remote/stream_of_articles/recent_activity_articles_body_model.dart" [label="recent_activity_articles_body_model"];
+  "/lib/data/model/remote/stream_of_articles/recent_activity_articles_model.dart" [label="recent_activity_articles_model"];
+  "/lib/data/model/remote/suggest_categories/suggest_category_model.dart" [label="suggest_category_model"];
+  "/lib/data/model/remote/suggest_locations/suggest_location_label_model.dart" [label="suggest_location_label_model"];
+  "/lib/data/model/remote/suggest_locations/suggest_location_model.dart" [label="suggest_location_model"];
+  "/lib/domain/entity/get_articles/get_articles_body_item.dart" [label="get_articles_body_item"];
+  "/lib/domain/entity/get_articles/get_articles_item.dart" [label="get_articles_item"];
+  "/lib/domain/entity/get_events/get_events_body_item.dart" [label="get_events_body_item"];
+  "/lib/domain/entity/get_events/get_events_item.dart" [label="get_events_item"];
+  "/lib/domain/entity/get_events/get_events_result_item.dart" [label="get_events_result_item"];
+  "/lib/domain/entity/stream_of_articles/activity_article_item.dart" [label="activity_article_item"];
+  "/lib/domain/entity/stream_of_articles/recent_activity_articles_body_item.dart" [label="recent_activity_articles_body_item"];
+  "/lib/domain/entity/stream_of_articles/recent_activity_articles_item.dart" [label="recent_activity_articles_item"];
+  "/lib/domain/entity/suggest_categories/suggest_category_item.dart" [label="suggest_category_item"];
+  "/lib/domain/entity/suggest_languages/suggest_language_item.dart" [label="suggest_language_item"];
+  "/lib/domain/entity/suggest_locations/suggest_location_item.dart" [label="suggest_location_item"];
+  "/lib/domain/entity/suggest_locations/suggest_location_label_item.dart" [label="suggest_location_label_item"];
+  "/lib/domain/repositories/remote/news_remote_repository.dart" [label="news_remote_repository"];
+  "/lib/generated/data/datasources/remote/news_remote_datasource.g.dart" [label="news_remote_datasource.g"];
+  "/lib/generated/data/model/remote/get_articles/get_articles_body_model.freezed.dart" [label="get_articles_body_model.freezed"];
+  "/lib/generated/data/model/remote/get_articles/get_articles_body_model.g.dart" [label="get_articles_body_model.g"];
+  "/lib/generated/data/model/remote/get_articles/get_articles_model.freezed.dart" [label="get_articles_model.freezed"];
+  "/lib/generated/data/model/remote/get_articles/get_articles_model.g.dart" [label="get_articles_model.g"];
+  "/lib/generated/data/model/remote/get_events/get_events_body_model.freezed.dart" [label="get_events_body_model.freezed"];
+  "/lib/generated/data/model/remote/get_events/get_events_body_model.g.dart" [label="get_events_body_model.g"];
+  "/lib/generated/data/model/remote/get_events/get_events_info_article_model.freezed.dart" [label="get_events_info_article_model.freezed"];
+  "/lib/generated/data/model/remote/get_events/get_events_info_article_model.g.dart" [label="get_events_info_article_model.g"];
+  "/lib/generated/data/model/remote/get_events/get_events_model.freezed.dart" [label="get_events_model.freezed"];
+  "/lib/generated/data/model/remote/get_events/get_events_model.g.dart" [label="get_events_model.g"];
+  "/lib/generated/data/model/remote/get_events/get_events_result_model.freezed.dart" [label="get_events_result_model.freezed"];
+  "/lib/generated/data/model/remote/get_events/get_events_result_model.g.dart" [label="get_events_result_model.g"];
+  "/lib/generated/data/model/remote/other/message_error_model.freezed.dart" [label="message_error_model.freezed"];
+  "/lib/generated/data/model/remote/other/message_error_model.g.dart" [label="message_error_model.g"];
+  "/lib/generated/data/model/remote/stream_of_articles/activity_article_model.freezed.dart" [label="activity_article_model.freezed"];
+  "/lib/generated/data/model/remote/stream_of_articles/activity_article_model.g.dart" [label="activity_article_model.g"];
+  "/lib/generated/data/model/remote/stream_of_articles/recent_activity_articles_body_model.freezed.dart" [label="recent_activity_articles_body_model.freezed"];
+  "/lib/generated/data/model/remote/stream_of_articles/recent_activity_articles_body_model.g.dart" [label="recent_activity_articles_body_model.g"];
+  "/lib/generated/data/model/remote/stream_of_articles/recent_activity_articles_model.freezed.dart" [label="recent_activity_articles_model.freezed"];
+  "/lib/generated/data/model/remote/stream_of_articles/recent_activity_articles_model.g.dart" [label="recent_activity_articles_model.g"];
+  "/lib/generated/data/model/remote/suggest_categories/suggest_category_model.freezed.dart" [label="suggest_category_model.freezed"];
+  "/lib/generated/data/model/remote/suggest_categories/suggest_category_model.g.dart" [label="suggest_category_model.g"];
+  "/lib/generated/data/model/remote/suggest_locations/suggest_location_label_model.freezed.dart" [label="suggest_location_label_model.freezed"];
+  "/lib/generated/data/model/remote/suggest_locations/suggest_location_label_model.g.dart" [label="suggest_location_label_model.g"];
+  "/lib/generated/data/model/remote/suggest_locations/suggest_location_model.freezed.dart" [label="suggest_location_model.freezed"];
+  "/lib/generated/data/model/remote/suggest_locations/suggest_location_model.g.dart" [label="suggest_location_model.g"];
+  "/lib/generated/domain/entity/get_articles/get_articles_body_item.freezed.dart" [label="get_articles_body_item.freezed"];
+  "/lib/generated/domain/entity/get_articles/get_articles_item.freezed.dart" [label="get_articles_item.freezed"];
+  "/lib/generated/domain/entity/get_events/get_events_body_item.freezed.dart" [label="get_events_body_item.freezed"];
+  "/lib/generated/domain/entity/get_events/get_events_item.freezed.dart" [label="get_events_item.freezed"];
+  "/lib/generated/domain/entity/get_events/get_events_result_item.freezed.dart" [label="get_events_result_item.freezed"];
+  "/lib/generated/domain/entity/stream_of_articles/activity_article_item.freezed.dart" [label="activity_article_item.freezed"];
+  "/lib/generated/domain/entity/stream_of_articles/recent_activity_articles_body_item.freezed.dart" [label="recent_activity_articles_body_item.freezed"];
+  "/lib/generated/domain/entity/stream_of_articles/recent_activity_articles_item.freezed.dart" [label="recent_activity_articles_item.freezed"];
+  "/lib/generated/domain/entity/suggest_categories/suggest_category_item.freezed.dart" [label="suggest_category_item.freezed"];
+  "/lib/generated/domain/entity/suggest_languages/suggest_language_item.freezed.dart" [label="suggest_language_item.freezed"];
+  "/lib/generated/domain/entity/suggest_locations/suggest_location_item.freezed.dart" [label="suggest_location_item.freezed"];
+  "/lib/generated/domain/entity/suggest_locations/suggest_location_label_item.freezed.dart" [label="suggest_location_label_item.freezed"];
+  "/lib/main.dart" [label="main"];
+  "/lib/presentation/articles/bloc/articles_cubit.dart" [label="articles_cubit"];
+  "/lib/presentation/articles/bloc/articles_state.dart" [label="articles_state"];
+  "/lib/presentation/articles/page/articles_page.dart" [label="articles_page"];
+  "/lib/presentation/articles/page/components/articles_list.dart" [label="articles_list"];
+  "/lib/presentation/articles/page/components/pagination_list.dart" [label="pagination_list"];
+  "/lib/presentation/articles/page/components/select_article_card.dart" [label="select_article_card"];
+  "/lib/presentation/articles/page/components/small_article_card.dart" [label="small_article_card"];
+  "/lib/presentation/articles/page/pages/initial_articles_page.dart" [label="initial_articles_page"];
+  "/lib/presentation/home/bloc/home_cubit.dart" [label="home_cubit"];
+  "/lib/presentation/home/bloc/home_state.dart" [label="home_state"];
+  "/lib/presentation/home/home_page.dart" [label="home_page"];
+  "/lib/presentation/one_article/one_article_page.dart" [label="one_article_page"];
+  "/lib/presentation/search/bloc/search_cubit.dart" [label="search_cubit"];
+  "/lib/presentation/search/bloc/search_state.dart" [label="search_state"];
+  "/lib/presentation/search/page/components/search_expanded_tile.dart" [label="search_expanded_tile"];
+  "/lib/presentation/search/page/components/search_filters.dart" [label="search_filters"];
+  "/lib/presentation/search/page/components/search_header.dart" [label="search_header"];
+  "/lib/presentation/search/page/search_page.dart" [label="search_page"];
+  "/lib/presentation/search/page/steps_pages/initial_search_step_page.dart" [label="initial_search_step_page"];
+  "/lib/presentation/search/page/steps_pages/result_search_step_page.dart" [label="result_search_step_page"];
+  "/lib/shared/constants/date_constants.dart" [label="date_constants"];
+  "/lib/shared/constants/dimension_constants.dart" [label="dimension_constants"];
+  "/lib/shared/constants/size_constants.dart" [label="size_constants"];
+  "/lib/shared/widgets/adaptive_full_page_view.dart" [label="adaptive_full_page_view"];
+  "/lib/shared/widgets/adaptive_splitted_view.dart" [label="adaptive_splitted_view"];
+  "/lib/shared/widgets/multi_chips.dart" [label="multi_chips"];
+  "/lib/shared/widgets/one_app_bar.dart" [label="one_app_bar"];
+  "/lib/shared/widgets/one_button.dart" [label="one_button"];
+  "/lib/shared/widgets/one_card.dart" [label="one_card"];
+  "/lib/shared/widgets/one_chip.dart" [label="one_chip"];
+  "/lib/shared/widgets/one_close_button.dart" [label="one_close_button"];
+  "/lib/shared/widgets/one_dialog.dart" [label="one_dialog"];
+  "/lib/shared/widgets/one_dropdown.dart" [label="one_dropdown"];
+  "/lib/shared/widgets/one_empty_state.dart" [label="one_empty_state"];
+  "/lib/shared/widgets/one_icon_button.dart" [label="one_icon_button"];
+  "/lib/shared/widgets/one_image.dart" [label="one_image"];
+  "/lib/shared/widgets/one_loading.dart" [label="one_loading"];
+  "/lib/shared/widgets/one_month_calendar.dart" [label="one_month_calendar"];
+  "/lib/shared/widgets/one_scroll_behavior.dart" [label="one_scroll_behavior"];
+  "/lib/shared/widgets/one_shimmer.dart" [label="one_shimmer"];
+  "/lib/shared/widgets/one_text_field.dart" [label="one_text_field"];
+  "/lib/start/di.dart" [label="di"];
+  "/lib/start/initial_setup.dart" [label="initial_setup"];
+  "/lib/start/one_app.dart" [label="one_app"];
+  "/lib/start/routing/helpers/multiplatform_page.dart" [label="multiplatform_page"];
+  "/lib/start/routing/main_router.dart" [label="main_router"];
+  "/lib/start/routing/main_route_names.dart" [label="main_route_names"];
+  "/lib/start/theme/color_scheme.g.dart" [label="color_scheme.g"];
+  "/lib/start/theme/gallery_option.dart" [label="gallery_option"];
+  subgraph "cluster~" {
+    label="appnews";
+    subgraph "cluster~/lib" {
+      label="lib";
+      "/lib/main.dart";
+      subgraph "cluster~/lib/core" {
+        label="core";
+        subgraph "cluster~/lib/core/base" {
+          label="base";
+          "/lib/core/base/failure.dart";
+        }
+        subgraph "cluster~/lib/core/enums" {
+          label="enums";
+          "/lib/core/enums/display_type_enum.dart";
+          "/lib/core/enums/home_article_type_enum.dart";
+          "/lib/core/enums/home_step_enum.dart";
+          "/lib/core/enums/message_type_enum.dart";
+          "/lib/core/enums/one_status_enum.dart";
+          "/lib/core/enums/search_step_enum.dart";
+          "/lib/core/enums/server_code_enum.dart";
+        }
+        subgraph "cluster~/lib/core/extensions" {
+          label="extensions";
+          "/lib/core/extensions/datetime_extension.dart";
+          "/lib/core/extensions/localization_extension.dart";
+        }
+        subgraph "cluster~/lib/core/helper" {
+          label="helper";
+          "/lib/core/helper/global_constants.dart";
+          "/lib/core/helper/language_helper.dart";
+          "/lib/core/helper/layout_helper.dart";
+          "/lib/core/helper/log_helper.dart";
+          "/lib/core/helper/repository_helper.dart";
+          "/lib/core/helper/serializable_interface.dart";
+        }
+        subgraph "cluster~/lib/core/services" {
+          label="services";
+          "/lib/core/services/global_message_service.dart";
+          "/lib/core/services/regex_service.dart";
+        }
+      }
+      subgraph "cluster~/lib/data" {
+        label="data";
+        subgraph "cluster~/lib/data/datasources" {
+          label="datasources";
+          subgraph "cluster~/lib/data/datasources/remote" {
+            label="remote";
+            "/lib/data/datasources/remote/news_remote_datasource.dart";
+          }
+        }
+        subgraph "cluster~/lib/data/model" {
+          label="model";
+          subgraph "cluster~/lib/data/model/remote" {
+            label="remote";
+            subgraph "cluster~/lib/data/model/remote/get_articles" {
+              label="get_articles";
+              "/lib/data/model/remote/get_articles/get_articles_body_model.dart";
+              "/lib/data/model/remote/get_articles/get_articles_model.dart";
+            }
+            subgraph "cluster~/lib/data/model/remote/get_events" {
+              label="get_events";
+              "/lib/data/model/remote/get_events/get_events_body_model.dart";
+              "/lib/data/model/remote/get_events/get_events_info_article_model.dart";
+              "/lib/data/model/remote/get_events/get_events_model.dart";
+              "/lib/data/model/remote/get_events/get_events_result_model.dart";
+            }
+            subgraph "cluster~/lib/data/model/remote/other" {
+              label="other";
+              "/lib/data/model/remote/other/message_error_model.dart";
+            }
+            subgraph "cluster~/lib/data/model/remote/requests" {
+              label="requests";
+              "/lib/data/model/remote/requests/get_articles_request.dart";
+              "/lib/data/model/remote/requests/get_events_request.dart";
+              "/lib/data/model/remote/requests/stream_of_articles_request.dart";
+              "/lib/data/model/remote/requests/suggest_categories_request.dart";
+              "/lib/data/model/remote/requests/suggest_locations_request.dart";
+            }
+            subgraph "cluster~/lib/data/model/remote/stream_of_articles" {
+              label="stream_of_articles";
+              "/lib/data/model/remote/stream_of_articles/activity_article_model.dart";
+              "/lib/data/model/remote/stream_of_articles/recent_activity_articles_body_model.dart";
+              "/lib/data/model/remote/stream_of_articles/recent_activity_articles_model.dart";
+            }
+            subgraph "cluster~/lib/data/model/remote/suggest_categories" {
+              label="suggest_categories";
+              "/lib/data/model/remote/suggest_categories/suggest_category_model.dart";
+            }
+            subgraph "cluster~/lib/data/model/remote/suggest_locations" {
+              label="suggest_locations";
+              "/lib/data/model/remote/suggest_locations/suggest_location_label_model.dart";
+              "/lib/data/model/remote/suggest_locations/suggest_location_model.dart";
+            }
+          }
+        }
+      }
+      subgraph "cluster~/lib/domain" {
+        label="domain";
+        subgraph "cluster~/lib/domain/entity" {
+          label="entity";
+          subgraph "cluster~/lib/domain/entity/get_articles" {
+            label="get_articles";
+            "/lib/domain/entity/get_articles/get_articles_body_item.dart";
+            "/lib/domain/entity/get_articles/get_articles_item.dart";
+          }
+          subgraph "cluster~/lib/domain/entity/get_events" {
+            label="get_events";
+            "/lib/domain/entity/get_events/get_events_body_item.dart";
+            "/lib/domain/entity/get_events/get_events_item.dart";
+            "/lib/domain/entity/get_events/get_events_result_item.dart";
+          }
+          subgraph "cluster~/lib/domain/entity/stream_of_articles" {
+            label="stream_of_articles";
+            "/lib/domain/entity/stream_of_articles/activity_article_item.dart";
+            "/lib/domain/entity/stream_of_articles/recent_activity_articles_body_item.dart";
+            "/lib/domain/entity/stream_of_articles/recent_activity_articles_item.dart";
+          }
+          subgraph "cluster~/lib/domain/entity/suggest_categories" {
+            label="suggest_categories";
+            "/lib/domain/entity/suggest_categories/suggest_category_item.dart";
+          }
+          subgraph "cluster~/lib/domain/entity/suggest_languages" {
+            label="suggest_languages";
+            "/lib/domain/entity/suggest_languages/suggest_language_item.dart";
+          }
+          subgraph "cluster~/lib/domain/entity/suggest_locations" {
+            label="suggest_locations";
+            "/lib/domain/entity/suggest_locations/suggest_location_item.dart";
+            "/lib/domain/entity/suggest_locations/suggest_location_label_item.dart";
+          }
+        }
+        subgraph "cluster~/lib/domain/repositories" {
+          label="repositories";
+          subgraph "cluster~/lib/domain/repositories/remote" {
+            label="remote";
+            "/lib/domain/repositories/remote/news_remote_repository.dart";
+          }
+        }
+      }
+      subgraph "cluster~/lib/generated" {
+        label="generated";
+        subgraph "cluster~/lib/generated/data" {
+          label="data";
+          subgraph "cluster~/lib/generated/data/datasources" {
+            label="datasources";
+            subgraph "cluster~/lib/generated/data/datasources/remote" {
+              label="remote";
+              "/lib/generated/data/datasources/remote/news_remote_datasource.g.dart";
+            }
+          }
+          subgraph "cluster~/lib/generated/data/model" {
+            label="model";
+            subgraph "cluster~/lib/generated/data/model/remote" {
+              label="remote";
+              subgraph "cluster~/lib/generated/data/model/remote/get_articles" {
+                label="get_articles";
+                "/lib/generated/data/model/remote/get_articles/get_articles_body_model.freezed.dart";
+                "/lib/generated/data/model/remote/get_articles/get_articles_body_model.g.dart";
+                "/lib/generated/data/model/remote/get_articles/get_articles_model.freezed.dart";
+                "/lib/generated/data/model/remote/get_articles/get_articles_model.g.dart";
+              }
+              subgraph "cluster~/lib/generated/data/model/remote/get_events" {
+                label="get_events";
+                "/lib/generated/data/model/remote/get_events/get_events_body_model.freezed.dart";
+                "/lib/generated/data/model/remote/get_events/get_events_body_model.g.dart";
+                "/lib/generated/data/model/remote/get_events/get_events_info_article_model.freezed.dart";
+                "/lib/generated/data/model/remote/get_events/get_events_info_article_model.g.dart";
+                "/lib/generated/data/model/remote/get_events/get_events_model.freezed.dart";
+                "/lib/generated/data/model/remote/get_events/get_events_model.g.dart";
+                "/lib/generated/data/model/remote/get_events/get_events_result_model.freezed.dart";
+                "/lib/generated/data/model/remote/get_events/get_events_result_model.g.dart";
+              }
+              subgraph "cluster~/lib/generated/data/model/remote/other" {
+                label="other";
+                "/lib/generated/data/model/remote/other/message_error_model.freezed.dart";
+                "/lib/generated/data/model/remote/other/message_error_model.g.dart";
+              }
+              subgraph "cluster~/lib/generated/data/model/remote/stream_of_articles" {
+                label="stream_of_articles";
+                "/lib/generated/data/model/remote/stream_of_articles/activity_article_model.freezed.dart";
+                "/lib/generated/data/model/remote/stream_of_articles/activity_article_model.g.dart";
+                "/lib/generated/data/model/remote/stream_of_articles/recent_activity_articles_body_model.freezed.dart";
+                "/lib/generated/data/model/remote/stream_of_articles/recent_activity_articles_body_model.g.dart";
+                "/lib/generated/data/model/remote/stream_of_articles/recent_activity_articles_model.freezed.dart";
+                "/lib/generated/data/model/remote/stream_of_articles/recent_activity_articles_model.g.dart";
+              }
+              subgraph "cluster~/lib/generated/data/model/remote/suggest_categories" {
+                label="suggest_categories";
+                "/lib/generated/data/model/remote/suggest_categories/suggest_category_model.freezed.dart";
+                "/lib/generated/data/model/remote/suggest_categories/suggest_category_model.g.dart";
+              }
+              subgraph "cluster~/lib/generated/data/model/remote/suggest_locations" {
+                label="suggest_locations";
+                "/lib/generated/data/model/remote/suggest_locations/suggest_location_label_model.freezed.dart";
+                "/lib/generated/data/model/remote/suggest_locations/suggest_location_label_model.g.dart";
+                "/lib/generated/data/model/remote/suggest_locations/suggest_location_model.freezed.dart";
+                "/lib/generated/data/model/remote/suggest_locations/suggest_location_model.g.dart";
+              }
+            }
+          }
+        }
+        subgraph "cluster~/lib/generated/domain" {
+          label="domain";
+          subgraph "cluster~/lib/generated/domain/entity" {
+            label="entity";
+            subgraph "cluster~/lib/generated/domain/entity/get_articles" {
+              label="get_articles";
+              "/lib/generated/domain/entity/get_articles/get_articles_body_item.freezed.dart";
+              "/lib/generated/domain/entity/get_articles/get_articles_item.freezed.dart";
+            }
+            subgraph "cluster~/lib/generated/domain/entity/get_events" {
+              label="get_events";
+              "/lib/generated/domain/entity/get_events/get_events_body_item.freezed.dart";
+              "/lib/generated/domain/entity/get_events/get_events_item.freezed.dart";
+              "/lib/generated/domain/entity/get_events/get_events_result_item.freezed.dart";
+            }
+            subgraph "cluster~/lib/generated/domain/entity/stream_of_articles" {
+              label="stream_of_articles";
+              "/lib/generated/domain/entity/stream_of_articles/activity_article_item.freezed.dart";
+              "/lib/generated/domain/entity/stream_of_articles/recent_activity_articles_body_item.freezed.dart";
+              "/lib/generated/domain/entity/stream_of_articles/recent_activity_articles_item.freezed.dart";
+            }
+            subgraph "cluster~/lib/generated/domain/entity/suggest_categories" {
+              label="suggest_categories";
+              "/lib/generated/domain/entity/suggest_categories/suggest_category_item.freezed.dart";
+            }
+            subgraph "cluster~/lib/generated/domain/entity/suggest_languages" {
+              label="suggest_languages";
+              "/lib/generated/domain/entity/suggest_languages/suggest_language_item.freezed.dart";
+            }
+            subgraph "cluster~/lib/generated/domain/entity/suggest_locations" {
+              label="suggest_locations";
+              "/lib/generated/domain/entity/suggest_locations/suggest_location_item.freezed.dart";
+              "/lib/generated/domain/entity/suggest_locations/suggest_location_label_item.freezed.dart";
+            }
+          }
+        }
+      }
+      subgraph "cluster~/lib/presentation" {
+        label="presentation";
+        subgraph "cluster~/lib/presentation/articles" {
+          label="articles";
+          subgraph "cluster~/lib/presentation/articles/bloc" {
+            label="bloc";
+            "/lib/presentation/articles/bloc/articles_cubit.dart";
+            "/lib/presentation/articles/bloc/articles_state.dart";
+          }
+          subgraph "cluster~/lib/presentation/articles/page" {
+            label="page";
+            "/lib/presentation/articles/page/articles_page.dart";
+            subgraph "cluster~/lib/presentation/articles/page/components" {
+              label="components";
+              "/lib/presentation/articles/page/components/articles_list.dart";
+              "/lib/presentation/articles/page/components/pagination_list.dart";
+              "/lib/presentation/articles/page/components/select_article_card.dart";
+              "/lib/presentation/articles/page/components/small_article_card.dart";
+            }
+            subgraph "cluster~/lib/presentation/articles/page/pages" {
+              label="pages";
+              "/lib/presentation/articles/page/pages/initial_articles_page.dart";
+            }
+          }
+        }
+        subgraph "cluster~/lib/presentation/home" {
+          label="home";
+          "/lib/presentation/home/home_page.dart";
+          subgraph "cluster~/lib/presentation/home/bloc" {
+            label="bloc";
+            "/lib/presentation/home/bloc/home_cubit.dart";
+            "/lib/presentation/home/bloc/home_state.dart";
+          }
+        }
+        subgraph "cluster~/lib/presentation/one_article" {
+          label="one_article";
+          "/lib/presentation/one_article/one_article_page.dart";
+        }
+        subgraph "cluster~/lib/presentation/search" {
+          label="search";
+          subgraph "cluster~/lib/presentation/search/bloc" {
+            label="bloc";
+            "/lib/presentation/search/bloc/search_cubit.dart";
+            "/lib/presentation/search/bloc/search_state.dart";
+          }
+          subgraph "cluster~/lib/presentation/search/page" {
+            label="page";
+            "/lib/presentation/search/page/search_page.dart";
+            subgraph "cluster~/lib/presentation/search/page/components" {
+              label="components";
+              "/lib/presentation/search/page/components/search_expanded_tile.dart";
+              "/lib/presentation/search/page/components/search_filters.dart";
+              "/lib/presentation/search/page/components/search_header.dart";
+            }
+            subgraph "cluster~/lib/presentation/search/page/steps_pages" {
+              label="steps_pages";
+              "/lib/presentation/search/page/steps_pages/initial_search_step_page.dart";
+              "/lib/presentation/search/page/steps_pages/result_search_step_page.dart";
+            }
+          }
+        }
+      }
+      subgraph "cluster~/lib/shared" {
+        label="shared";
+        subgraph "cluster~/lib/shared/constants" {
+          label="constants";
+          "/lib/shared/constants/date_constants.dart";
+          "/lib/shared/constants/dimension_constants.dart";
+          "/lib/shared/constants/size_constants.dart";
+        }
+        subgraph "cluster~/lib/shared/widgets" {
+          label="widgets";
+          "/lib/shared/widgets/adaptive_full_page_view.dart";
+          "/lib/shared/widgets/adaptive_splitted_view.dart";
+          "/lib/shared/widgets/multi_chips.dart";
+          "/lib/shared/widgets/one_app_bar.dart";
+          "/lib/shared/widgets/one_button.dart";
+          "/lib/shared/widgets/one_card.dart";
+          "/lib/shared/widgets/one_chip.dart";
+          "/lib/shared/widgets/one_close_button.dart";
+          "/lib/shared/widgets/one_dialog.dart";
+          "/lib/shared/widgets/one_dropdown.dart";
+          "/lib/shared/widgets/one_empty_state.dart";
+          "/lib/shared/widgets/one_icon_button.dart";
+          "/lib/shared/widgets/one_image.dart";
+          "/lib/shared/widgets/one_loading.dart";
+          "/lib/shared/widgets/one_month_calendar.dart";
+          "/lib/shared/widgets/one_scroll_behavior.dart";
+          "/lib/shared/widgets/one_shimmer.dart";
+          "/lib/shared/widgets/one_text_field.dart";
+        }
+      }
+      subgraph "cluster~/lib/start" {
+        label="start";
+        "/lib/start/di.dart";
+        "/lib/start/initial_setup.dart";
+        "/lib/start/one_app.dart";
+        subgraph "cluster~/lib/start/routing" {
+          label="routing";
+          "/lib/start/routing/main_router.dart";
+          "/lib/start/routing/main_route_names.dart";
+          subgraph "cluster~/lib/start/routing/helpers" {
+            label="helpers";
+            "/lib/start/routing/helpers/multiplatform_page.dart";
+          }
+        }
+        subgraph "cluster~/lib/start/theme" {
+          label="theme";
+          "/lib/start/theme/color_scheme.g.dart";
+          "/lib/start/theme/gallery_option.dart";
+        }
+      }
+    }
+  }
+  "/lib/core/base/failure.dart" -> "/lib/core/enums/server_code_enum.dart";
+  "/lib/core/base/failure.dart" -> "/lib/data/model/remote/other/message_error_model.dart";
+  "/lib/core/enums/home_article_type_enum.dart" -> "/lib/core/extensions/localization_extension.dart";
+  "/lib/core/helper/language_helper.dart" -> "/lib/domain/entity/suggest_languages/suggest_language_item.dart";
+  "/lib/core/helper/layout_helper.dart" -> "/lib/core/enums/display_type_enum.dart";
+  "/lib/core/helper/layout_helper.dart" -> "/lib/shared/constants/size_constants.dart";
+  "/lib/core/helper/repository_helper.dart" -> "/lib/core/base/failure.dart";
+  "/lib/core/helper/repository_helper.dart" -> "/lib/core/helper/log_helper.dart";
+  "/lib/core/helper/repository_helper.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/core/helper/repository_helper.dart" -> "/lib/data/model/remote/other/message_error_model.dart";
+  "/lib/core/services/global_message_service.dart" -> "/lib/core/enums/message_type_enum.dart";
+  "/lib/core/services/global_message_service.dart" -> "/lib/core/helper/global_constants.dart";
+  "/lib/core/services/global_message_service.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/core/services/global_message_service.dart" -> "/lib/shared/constants/size_constants.dart";
+  "/lib/core/services/global_message_service.dart" -> "/lib/shared/widgets/one_close_button.dart";
+  "/lib/data/datasources/remote/news_remote_datasource.dart" -> "/lib/core/helper/global_constants.dart";
+  "/lib/data/datasources/remote/news_remote_datasource.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/datasources/remote/news_remote_datasource.dart" -> "/lib/data/model/remote/get_articles/get_articles_model.dart";
+  "/lib/data/datasources/remote/news_remote_datasource.dart" -> "/lib/data/model/remote/get_events/get_events_model.dart";
+  "/lib/data/datasources/remote/news_remote_datasource.dart" -> "/lib/data/model/remote/stream_of_articles/recent_activity_articles_model.dart";
+  "/lib/data/datasources/remote/news_remote_datasource.dart" -> "/lib/data/model/remote/suggest_categories/suggest_category_model.dart";
+  "/lib/data/datasources/remote/news_remote_datasource.dart" -> "/lib/data/model/remote/suggest_locations/suggest_location_model.dart";
+  "/lib/data/model/remote/get_articles/get_articles_body_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/get_articles/get_articles_body_model.dart" -> "/lib/data/model/remote/stream_of_articles/activity_article_model.dart";
+  "/lib/data/model/remote/get_articles/get_articles_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/get_articles/get_articles_model.dart" -> "/lib/data/model/remote/get_articles/get_articles_body_model.dart";
+  "/lib/data/model/remote/get_events/get_events_body_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/get_events/get_events_body_model.dart" -> "/lib/data/model/remote/get_events/get_events_result_model.dart";
+  "/lib/data/model/remote/get_events/get_events_info_article_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/get_events/get_events_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/get_events/get_events_model.dart" -> "/lib/data/model/remote/get_events/get_events_body_model.dart";
+  "/lib/data/model/remote/get_events/get_events_result_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/other/message_error_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/requests/get_articles_request.dart" -> "/lib/core/helper/global_constants.dart";
+  "/lib/data/model/remote/requests/get_articles_request.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/requests/get_events_request.dart" -> "/lib/core/extensions/datetime_extension.dart";
+  "/lib/data/model/remote/requests/get_events_request.dart" -> "/lib/core/helper/global_constants.dart";
+  "/lib/data/model/remote/requests/get_events_request.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/requests/get_events_request.dart" -> "/lib/domain/entity/suggest_categories/suggest_category_item.dart";
+  "/lib/data/model/remote/requests/get_events_request.dart" -> "/lib/domain/entity/suggest_languages/suggest_language_item.dart";
+  "/lib/data/model/remote/requests/get_events_request.dart" -> "/lib/domain/entity/suggest_locations/suggest_location_item.dart";
+  "/lib/data/model/remote/requests/stream_of_articles_request.dart" -> "/lib/core/helper/global_constants.dart";
+  "/lib/data/model/remote/requests/stream_of_articles_request.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/requests/suggest_categories_request.dart" -> "/lib/core/helper/global_constants.dart";
+  "/lib/data/model/remote/requests/suggest_categories_request.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/requests/suggest_locations_request.dart" -> "/lib/core/helper/global_constants.dart";
+  "/lib/data/model/remote/requests/suggest_locations_request.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/stream_of_articles/activity_article_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/stream_of_articles/recent_activity_articles_body_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/stream_of_articles/recent_activity_articles_body_model.dart" -> "/lib/data/model/remote/stream_of_articles/activity_article_model.dart";
+  "/lib/data/model/remote/stream_of_articles/recent_activity_articles_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/stream_of_articles/recent_activity_articles_model.dart" -> "/lib/data/model/remote/stream_of_articles/recent_activity_articles_body_model.dart";
+  "/lib/data/model/remote/suggest_categories/suggest_category_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/suggest_locations/suggest_location_label_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/suggest_locations/suggest_location_model.dart" -> "/lib/core/helper/serializable_interface.dart";
+  "/lib/data/model/remote/suggest_locations/suggest_location_model.dart" -> "/lib/data/model/remote/suggest_locations/suggest_location_label_model.dart";
+  "/lib/domain/entity/get_articles/get_articles_body_item.dart" -> "/lib/data/model/remote/get_articles/get_articles_body_model.dart";
+  "/lib/domain/entity/get_articles/get_articles_body_item.dart" -> "/lib/domain/entity/stream_of_articles/activity_article_item.dart";
+  "/lib/domain/entity/get_articles/get_articles_item.dart" -> "/lib/data/model/remote/get_articles/get_articles_model.dart";
+  "/lib/domain/entity/get_articles/get_articles_item.dart" -> "/lib/domain/entity/get_articles/get_articles_body_item.dart";
+  "/lib/domain/entity/get_events/get_events_body_item.dart" -> "/lib/data/model/remote/get_events/get_events_body_model.dart";
+  "/lib/domain/entity/get_events/get_events_body_item.dart" -> "/lib/domain/entity/get_events/get_events_result_item.dart";
+  "/lib/domain/entity/get_events/get_events_item.dart" -> "/lib/data/model/remote/get_events/get_events_model.dart";
+  "/lib/domain/entity/get_events/get_events_item.dart" -> "/lib/domain/entity/get_events/get_events_body_item.dart";
+  "/lib/domain/entity/get_events/get_events_result_item.dart" -> "/lib/data/model/remote/get_events/get_events_result_model.dart";
+  "/lib/domain/entity/stream_of_articles/activity_article_item.dart" -> "/lib/data/model/remote/stream_of_articles/activity_article_model.dart";
+  "/lib/domain/entity/stream_of_articles/activity_article_item.dart" -> "/lib/domain/entity/get_events/get_events_result_item.dart";
+  "/lib/domain/entity/stream_of_articles/recent_activity_articles_body_item.dart" -> "/lib/data/model/remote/stream_of_articles/recent_activity_articles_body_model.dart";
+  "/lib/domain/entity/stream_of_articles/recent_activity_articles_body_item.dart" -> "/lib/domain/entity/stream_of_articles/activity_article_item.dart";
+  "/lib/domain/entity/stream_of_articles/recent_activity_articles_item.dart" -> "/lib/data/model/remote/stream_of_articles/recent_activity_articles_model.dart";
+  "/lib/domain/entity/stream_of_articles/recent_activity_articles_item.dart" -> "/lib/domain/entity/stream_of_articles/recent_activity_articles_body_item.dart";
+  "/lib/domain/entity/suggest_categories/suggest_category_item.dart" -> "/lib/data/model/remote/suggest_categories/suggest_category_model.dart";
+  "/lib/domain/entity/suggest_locations/suggest_location_item.dart" -> "/lib/data/model/remote/suggest_locations/suggest_location_model.dart";
+  "/lib/domain/entity/suggest_locations/suggest_location_item.dart" -> "/lib/domain/entity/suggest_locations/suggest_location_label_item.dart";
+  "/lib/domain/entity/suggest_locations/suggest_location_label_item.dart" -> "/lib/data/model/remote/suggest_locations/suggest_location_label_model.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/core/base/failure.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/core/helper/repository_helper.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/data/datasources/remote/news_remote_datasource.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/data/model/remote/get_articles/get_articles_model.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/data/model/remote/get_events/get_events_model.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/data/model/remote/requests/get_articles_request.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/data/model/remote/requests/get_events_request.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/data/model/remote/requests/stream_of_articles_request.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/data/model/remote/requests/suggest_categories_request.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/data/model/remote/requests/suggest_locations_request.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/data/model/remote/stream_of_articles/recent_activity_articles_model.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/data/model/remote/suggest_categories/suggest_category_model.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/data/model/remote/suggest_locations/suggest_location_model.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/domain/entity/get_articles/get_articles_item.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/domain/entity/get_events/get_events_item.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/domain/entity/stream_of_articles/recent_activity_articles_item.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/domain/entity/suggest_categories/suggest_category_item.dart";
+  "/lib/domain/repositories/remote/news_remote_repository.dart" -> "/lib/domain/entity/suggest_locations/suggest_location_item.dart";
+  "/lib/main.dart" -> "/lib/start/initial_setup.dart";
+  "/lib/main.dart" -> "/lib/start/one_app.dart";
+  "/lib/presentation/articles/bloc/articles_cubit.dart" -> "/lib/core/base/failure.dart";
+  "/lib/presentation/articles/bloc/articles_cubit.dart" -> "/lib/core/enums/home_article_type_enum.dart";
+  "/lib/presentation/articles/bloc/articles_cubit.dart" -> "/lib/core/enums/one_status_enum.dart";
+  "/lib/presentation/articles/bloc/articles_cubit.dart" -> "/lib/data/model/remote/requests/get_articles_request.dart";
+  "/lib/presentation/articles/bloc/articles_cubit.dart" -> "/lib/data/model/remote/requests/stream_of_articles_request.dart";
+  "/lib/presentation/articles/bloc/articles_cubit.dart" -> "/lib/domain/entity/get_articles/get_articles_item.dart";
+  "/lib/presentation/articles/bloc/articles_cubit.dart" -> "/lib/domain/entity/stream_of_articles/recent_activity_articles_item.dart";
+  "/lib/presentation/articles/bloc/articles_cubit.dart" -> "/lib/domain/repositories/remote/news_remote_repository.dart";
+  "/lib/presentation/articles/bloc/articles_cubit.dart" -> "/lib/presentation/articles/bloc/articles_state.dart";
+  "/lib/presentation/articles/bloc/articles_state.dart" -> "/lib/core/enums/home_article_type_enum.dart";
+  "/lib/presentation/articles/bloc/articles_state.dart" -> "/lib/core/enums/one_status_enum.dart";
+  "/lib/presentation/articles/bloc/articles_state.dart" -> "/lib/domain/entity/get_articles/get_articles_item.dart";
+  "/lib/presentation/articles/bloc/articles_state.dart" -> "/lib/domain/entity/stream_of_articles/recent_activity_articles_item.dart";
+  "/lib/presentation/articles/page/articles_page.dart" -> "/lib/core/enums/one_status_enum.dart";
+  "/lib/presentation/articles/page/articles_page.dart" -> "/lib/presentation/articles/bloc/articles_cubit.dart";
+  "/lib/presentation/articles/page/articles_page.dart" -> "/lib/presentation/articles/bloc/articles_state.dart";
+  "/lib/presentation/articles/page/articles_page.dart" -> "/lib/presentation/articles/page/pages/initial_articles_page.dart";
+  "/lib/presentation/articles/page/articles_page.dart" -> "/lib/shared/widgets/one_empty_state.dart";
+  "/lib/presentation/articles/page/articles_page.dart" -> "/lib/shared/widgets/one_loading.dart";
+  "/lib/presentation/articles/page/components/articles_list.dart" -> "/lib/core/helper/layout_helper.dart";
+  "/lib/presentation/articles/page/components/articles_list.dart" -> "/lib/domain/entity/stream_of_articles/activity_article_item.dart";
+  "/lib/presentation/articles/page/components/articles_list.dart" -> "/lib/presentation/articles/bloc/articles_cubit.dart";
+  "/lib/presentation/articles/page/components/articles_list.dart" -> "/lib/presentation/articles/bloc/articles_state.dart";
+  "/lib/presentation/articles/page/components/articles_list.dart" -> "/lib/presentation/articles/page/components/small_article_card.dart";
+  "/lib/presentation/articles/page/components/articles_list.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/presentation/articles/page/components/articles_list.dart" -> "/lib/shared/widgets/one_empty_state.dart";
+  "/lib/presentation/articles/page/components/pagination_list.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/presentation/articles/page/components/pagination_list.dart" -> "/lib/shared/widgets/one_scroll_behavior.dart";
+  "/lib/presentation/articles/page/components/select_article_card.dart" -> "/lib/core/extensions/localization_extension.dart";
+  "/lib/presentation/articles/page/components/select_article_card.dart" -> "/lib/shared/widgets/one_empty_state.dart";
+  "/lib/presentation/articles/page/components/small_article_card.dart" -> "/lib/domain/entity/stream_of_articles/activity_article_item.dart";
+  "/lib/presentation/articles/page/components/small_article_card.dart" -> "/lib/presentation/home/bloc/home_cubit.dart";
+  "/lib/presentation/articles/page/components/small_article_card.dart" -> "/lib/shared/constants/date_constants.dart";
+  "/lib/presentation/articles/page/components/small_article_card.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/presentation/articles/page/components/small_article_card.dart" -> "/lib/shared/widgets/one_card.dart";
+  "/lib/presentation/articles/page/components/small_article_card.dart" -> "/lib/shared/widgets/one_dialog.dart";
+  "/lib/presentation/articles/page/components/small_article_card.dart" -> "/lib/shared/widgets/one_image.dart";
+  "/lib/presentation/articles/page/pages/initial_articles_page.dart" -> "/lib/core/enums/home_article_type_enum.dart";
+  "/lib/presentation/articles/page/pages/initial_articles_page.dart" -> "/lib/presentation/articles/bloc/articles_cubit.dart";
+  "/lib/presentation/articles/page/pages/initial_articles_page.dart" -> "/lib/presentation/articles/bloc/articles_state.dart";
+  "/lib/presentation/articles/page/pages/initial_articles_page.dart" -> "/lib/presentation/articles/page/components/articles_list.dart";
+  "/lib/presentation/articles/page/pages/initial_articles_page.dart" -> "/lib/presentation/articles/page/components/pagination_list.dart";
+  "/lib/presentation/articles/page/pages/initial_articles_page.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/presentation/articles/page/pages/initial_articles_page.dart" -> "/lib/shared/widgets/multi_chips.dart";
+  "/lib/presentation/home/bloc/home_cubit.dart" -> "/lib/core/enums/home_step_enum.dart";
+  "/lib/presentation/home/bloc/home_cubit.dart" -> "/lib/domain/entity/stream_of_articles/activity_article_item.dart";
+  "/lib/presentation/home/bloc/home_cubit.dart" -> "/lib/presentation/home/bloc/home_state.dart";
+  "/lib/presentation/home/bloc/home_state.dart" -> "/lib/core/enums/home_step_enum.dart";
+  "/lib/presentation/home/bloc/home_state.dart" -> "/lib/domain/entity/stream_of_articles/activity_article_item.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/core/enums/home_step_enum.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/core/extensions/localization_extension.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/presentation/articles/bloc/articles_cubit.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/presentation/articles/page/articles_page.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/presentation/articles/page/components/select_article_card.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/presentation/home/bloc/home_cubit.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/presentation/home/bloc/home_state.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/presentation/one_article/one_article_page.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/presentation/search/bloc/search_cubit.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/presentation/search/page/components/search_header.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/presentation/search/page/search_page.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/shared/constants/size_constants.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/shared/widgets/adaptive_splitted_view.dart";
+  "/lib/presentation/home/home_page.dart" -> "/lib/start/di.dart";
+  "/lib/presentation/one_article/one_article_page.dart" -> "/lib/domain/entity/stream_of_articles/activity_article_item.dart";
+  "/lib/presentation/one_article/one_article_page.dart" -> "/lib/shared/constants/date_constants.dart";
+  "/lib/presentation/one_article/one_article_page.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/presentation/one_article/one_article_page.dart" -> "/lib/shared/widgets/one_image.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/core/base/failure.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/core/enums/one_status_enum.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/core/enums/search_step_enum.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/core/helper/language_helper.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/core/services/regex_service.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/data/model/remote/requests/get_events_request.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/data/model/remote/requests/suggest_categories_request.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/data/model/remote/requests/suggest_locations_request.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/domain/entity/get_events/get_events_item.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/domain/entity/suggest_categories/suggest_category_item.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/domain/entity/suggest_languages/suggest_language_item.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/domain/entity/suggest_locations/suggest_location_item.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/domain/repositories/remote/news_remote_repository.dart";
+  "/lib/presentation/search/bloc/search_cubit.dart" -> "/lib/presentation/search/bloc/search_state.dart";
+  "/lib/presentation/search/bloc/search_state.dart" -> "/lib/core/enums/one_status_enum.dart";
+  "/lib/presentation/search/bloc/search_state.dart" -> "/lib/core/enums/search_step_enum.dart";
+  "/lib/presentation/search/bloc/search_state.dart" -> "/lib/domain/entity/get_events/get_events_item.dart";
+  "/lib/presentation/search/bloc/search_state.dart" -> "/lib/domain/entity/suggest_categories/suggest_category_item.dart";
+  "/lib/presentation/search/bloc/search_state.dart" -> "/lib/domain/entity/suggest_languages/suggest_language_item.dart";
+  "/lib/presentation/search/bloc/search_state.dart" -> "/lib/domain/entity/suggest_locations/suggest_location_item.dart";
+  "/lib/presentation/search/page/components/search_expanded_tile.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/presentation/search/page/components/search_filters.dart" -> "/lib/core/extensions/localization_extension.dart";
+  "/lib/presentation/search/page/components/search_filters.dart" -> "/lib/presentation/search/bloc/search_cubit.dart";
+  "/lib/presentation/search/page/components/search_filters.dart" -> "/lib/presentation/search/bloc/search_state.dart";
+  "/lib/presentation/search/page/components/search_filters.dart" -> "/lib/presentation/search/page/components/search_expanded_tile.dart";
+  "/lib/presentation/search/page/components/search_filters.dart" -> "/lib/shared/constants/date_constants.dart";
+  "/lib/presentation/search/page/components/search_filters.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/presentation/search/page/components/search_filters.dart" -> "/lib/shared/constants/size_constants.dart";
+  "/lib/presentation/search/page/components/search_filters.dart" -> "/lib/shared/widgets/multi_chips.dart";
+  "/lib/presentation/search/page/components/search_filters.dart" -> "/lib/shared/widgets/one_month_calendar.dart";
+  "/lib/presentation/search/page/components/search_filters.dart" -> "/lib/shared/widgets/one_text_field.dart";
+  "/lib/presentation/search/page/components/search_header.dart" -> "/lib/core/enums/home_step_enum.dart";
+  "/lib/presentation/search/page/components/search_header.dart" -> "/lib/core/enums/search_step_enum.dart";
+  "/lib/presentation/search/page/components/search_header.dart" -> "/lib/core/extensions/localization_extension.dart";
+  "/lib/presentation/search/page/components/search_header.dart" -> "/lib/presentation/home/bloc/home_cubit.dart";
+  "/lib/presentation/search/page/components/search_header.dart" -> "/lib/presentation/search/bloc/search_cubit.dart";
+  "/lib/presentation/search/page/components/search_header.dart" -> "/lib/presentation/search/bloc/search_state.dart";
+  "/lib/presentation/search/page/components/search_header.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/presentation/search/page/components/search_header.dart" -> "/lib/shared/widgets/one_icon_button.dart";
+  "/lib/presentation/search/page/components/search_header.dart" -> "/lib/shared/widgets/one_text_field.dart";
+  "/lib/presentation/search/page/search_page.dart" -> "/lib/core/enums/one_status_enum.dart";
+  "/lib/presentation/search/page/search_page.dart" -> "/lib/core/enums/search_step_enum.dart";
+  "/lib/presentation/search/page/search_page.dart" -> "/lib/core/services/global_message_service.dart";
+  "/lib/presentation/search/page/search_page.dart" -> "/lib/presentation/search/bloc/search_cubit.dart";
+  "/lib/presentation/search/page/search_page.dart" -> "/lib/presentation/search/bloc/search_state.dart";
+  "/lib/presentation/search/page/search_page.dart" -> "/lib/presentation/search/page/steps_pages/initial_search_step_page.dart";
+  "/lib/presentation/search/page/search_page.dart" -> "/lib/presentation/search/page/steps_pages/result_search_step_page.dart";
+  "/lib/presentation/search/page/search_page.dart" -> "/lib/shared/widgets/one_loading.dart";
+  "/lib/presentation/search/page/steps_pages/initial_search_step_page.dart" -> "/lib/core/extensions/localization_extension.dart";
+  "/lib/presentation/search/page/steps_pages/initial_search_step_page.dart" -> "/lib/presentation/search/bloc/search_cubit.dart";
+  "/lib/presentation/search/page/steps_pages/initial_search_step_page.dart" -> "/lib/presentation/search/page/components/search_filters.dart";
+  "/lib/presentation/search/page/steps_pages/initial_search_step_page.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/presentation/search/page/steps_pages/initial_search_step_page.dart" -> "/lib/shared/widgets/one_button.dart";
+  "/lib/presentation/search/page/steps_pages/result_search_step_page.dart" -> "/lib/domain/entity/get_events/get_events_item.dart";
+  "/lib/presentation/search/page/steps_pages/result_search_step_page.dart" -> "/lib/domain/entity/stream_of_articles/activity_article_item.dart";
+  "/lib/presentation/search/page/steps_pages/result_search_step_page.dart" -> "/lib/presentation/articles/page/components/articles_list.dart";
+  "/lib/presentation/search/page/steps_pages/result_search_step_page.dart" -> "/lib/presentation/articles/page/components/pagination_list.dart";
+  "/lib/presentation/search/page/steps_pages/result_search_step_page.dart" -> "/lib/shared/widgets/one_empty_state.dart";
+  "/lib/shared/widgets/adaptive_full_page_view.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/adaptive_full_page_view.dart" -> "/lib/shared/constants/size_constants.dart";
+  "/lib/shared/widgets/adaptive_full_page_view.dart" -> "/lib/shared/widgets/one_app_bar.dart";
+  "/lib/shared/widgets/adaptive_full_page_view.dart" -> "/lib/shared/widgets/one_close_button.dart";
+  "/lib/shared/widgets/adaptive_splitted_view.dart" -> "/lib/shared/constants/size_constants.dart";
+  "/lib/shared/widgets/multi_chips.dart" -> "/lib/shared/widgets/one_chip.dart";
+  "/lib/shared/widgets/one_app_bar.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/one_button.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/one_button.dart" -> "/lib/shared/constants/size_constants.dart";
+  "/lib/shared/widgets/one_chip.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/one_close_button.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/one_close_button.dart" -> "/lib/shared/widgets/one_icon_button.dart";
+  "/lib/shared/widgets/one_dialog.dart" -> "/lib/domain/entity/stream_of_articles/activity_article_item.dart";
+  "/lib/shared/widgets/one_dialog.dart" -> "/lib/presentation/one_article/one_article_page.dart";
+  "/lib/shared/widgets/one_dialog.dart" -> "/lib/shared/constants/size_constants.dart";
+  "/lib/shared/widgets/one_dialog.dart" -> "/lib/shared/widgets/adaptive_full_page_view.dart";
+  "/lib/shared/widgets/one_dropdown.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/one_empty_state.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/one_icon_button.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/one_image.dart" -> "/lib/shared/widgets/one_shimmer.dart";
+  "/lib/shared/widgets/one_loading.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/one_month_calendar.dart" -> "/lib/shared/constants/date_constants.dart";
+  "/lib/shared/widgets/one_month_calendar.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/one_month_calendar.dart" -> "/lib/shared/constants/size_constants.dart";
+  "/lib/shared/widgets/one_shimmer.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/one_text_field.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/shared/widgets/one_text_field.dart" -> "/lib/shared/widgets/one_scroll_behavior.dart";
+  "/lib/start/di.dart" -> "/lib/core/helper/global_constants.dart";
+  "/lib/start/di.dart" -> "/lib/data/datasources/remote/news_remote_datasource.dart";
+  "/lib/start/di.dart" -> "/lib/domain/repositories/remote/news_remote_repository.dart";
+  "/lib/start/di.dart" -> "/lib/presentation/articles/bloc/articles_cubit.dart";
+  "/lib/start/di.dart" -> "/lib/presentation/home/bloc/home_cubit.dart";
+  "/lib/start/di.dart" -> "/lib/presentation/search/bloc/search_cubit.dart";
+  "/lib/start/di.dart" -> "/lib/start/routing/main_router.dart";
+  "/lib/start/initial_setup.dart" -> "/lib/start/di.dart";
+  "/lib/start/one_app.dart" -> "/lib/shared/constants/size_constants.dart";
+  "/lib/start/one_app.dart" -> "/lib/shared/widgets/one_scroll_behavior.dart";
+  "/lib/start/one_app.dart" -> "/lib/start/di.dart";
+  "/lib/start/one_app.dart" -> "/lib/start/routing/main_router.dart";
+  "/lib/start/one_app.dart" -> "/lib/start/theme/gallery_option.dart";
+  "/lib/start/routing/main_router.dart" -> "/lib/presentation/home/home_page.dart";
+  "/lib/start/routing/main_router.dart" -> "/lib/start/routing/helpers/multiplatform_page.dart";
+  "/lib/start/routing/main_router.dart" -> "/lib/start/routing/main_route_names.dart";
+  "/lib/start/theme/gallery_option.dart" -> "/lib/shared/constants/dimension_constants.dart";
+  "/lib/start/theme/gallery_option.dart" -> "/lib/start/theme/color_scheme.g.dart";
+}
