@@ -176,6 +176,7 @@ class _SearchFiltersState extends State<SearchFilters> {
                       const SizedBox(height: PaddingConstants.small),
                       OneMonthCalendar(
                         focusedDate: state.selectedStartDate,
+                        onlyFutureDates: false,
                         onDaySelected: (date) {
                           bloc.selectStartDate(date);
                         },
